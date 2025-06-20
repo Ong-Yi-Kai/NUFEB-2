@@ -1,25 +1,22 @@
 /* -*- c++ -*- ----------------------------------------------------------
    LAMMPS - Large-scale Atomic/Molecular Massively Parallel Simulator
-   https://www.lammps.org/, Sandia National Laboratories
-   LAMMPS development team: developers@lammps.org
-
+   http://lammps.sandia.gov, Sandia National Laboratories
+   Steve Plimpton, sjplimp@sandia.gov
    Copyright (2003) Sandia Corporation.  Under the terms of Contract
    DE-AC04-94AL85000 with Sandia Corporation, the U.S. Government retains
    certain rights in this software.  This software is distributed under
    the GNU General Public License.
-
    See the README file in the top-level LAMMPS directory.
 ------------------------------------------------------------------------- */
 
 #ifdef FIX_CLASS
-// clang-format off
-FixStyle(NEIGH_HISTORY/KK,FixNeighHistoryKokkos<LMPDeviceType>);
-FixStyle(NEIGH_HISTORY/KK/DEVICE,FixNeighHistoryKokkos<LMPDeviceType>);
-FixStyle(NEIGH_HISTORY/KK/HOST,FixNeighHistoryKokkos<LMPHostType>);
-// clang-format on
+
+FixStyle(NEIGH_HISTORY/KK,FixNeighHistoryKokkos<LMPDeviceType>)
+FixStyle(NEIGH_HISTORY/KK/DEVICE,FixNeighHistoryKokkos<LMPDeviceType>)
+FixStyle(NEIGH_HISTORY/KK/HOST,FixNeighHistoryKokkos<LMPHostType>)
+
 #else
 
-// clang-format off
 #ifndef LMP_FIX_NEIGH_HISTORY_KOKKOS_H
 #define LMP_FIX_NEIGH_HISTORY_KOKKOS_H
 
@@ -31,17 +28,17 @@ template <class DeviceType>
 class FixNeighHistoryKokkos : public FixNeighHistory {
  public:
   FixNeighHistoryKokkos(class LAMMPS *, int, char **);
-  ~FixNeighHistoryKokkos() override;
+  ~FixNeighHistoryKokkos();
 
-  void init() override;
-  void pre_exchange() override;
-  void setup_post_neighbor() override;
-  void post_neighbor() override;
-  double memory_usage() override;
-  void grow_arrays(int) override;
-  void copy_arrays(int, int, int) override;
-  int pack_exchange(int, double *) override;
-  int unpack_exchange(int, double *) override;
+  void init();
+  void pre_exchange();
+  void setup_post_neighbor();
+  virtual void post_neighbor();
+  double memory_usage();
+  void grow_arrays(int);
+  void copy_arrays(int, int, int);
+  int pack_exchange(int, double *);
+  int unpack_exchange(int, double *);
 
   KOKKOS_INLINE_FUNCTION
   void zero_partner_count_item(const int &i) const;
@@ -50,13 +47,10 @@ class FixNeighHistoryKokkos : public FixNeighHistory {
   KOKKOS_INLINE_FUNCTION
   void post_neighbor_item(const int &ii) const;
 
-  typename DAT::tdual_int_2d k_firstflag;
-  typename DAT::tdual_float_2d k_firstvalue;
+  typename Kokkos::View<int**> d_firstflag;
+  typename Kokkos::View<LMP_FLOAT**> d_firstvalue;
 
  private:
-  typename ArrayTypes<DeviceType>::t_int_2d d_firstflag;
-  typename ArrayTypes<DeviceType>::t_float_2d d_firstvalue;
-
   typename ArrayTypes<DeviceType>::tdual_int_1d k_npartner;
   typename ArrayTypes<DeviceType>::tdual_tagint_2d k_partner;
   typename ArrayTypes<DeviceType>::tdual_float_2d k_valuepartner;
@@ -77,7 +71,6 @@ class FixNeighHistoryKokkos : public FixNeighHistory {
 
 template <class DeviceType>
 struct FixNeighHistoryKokkosZeroPartnerCountFunctor {
-  typedef DeviceType device_type;
   FixNeighHistoryKokkos<DeviceType> c;
   FixNeighHistoryKokkosZeroPartnerCountFunctor(FixNeighHistoryKokkos<DeviceType> *c_ptr): c(*c_ptr) {}
   KOKKOS_INLINE_FUNCTION
@@ -88,7 +81,6 @@ struct FixNeighHistoryKokkosZeroPartnerCountFunctor {
 
 template <class DeviceType>
 struct FixNeighHistoryKokkosPreExchangeFunctor {
-  typedef DeviceType device_type;
   FixNeighHistoryKokkos<DeviceType> c;
   FixNeighHistoryKokkosPreExchangeFunctor(FixNeighHistoryKokkos<DeviceType> *c_ptr): c(*c_ptr) {}
   KOKKOS_INLINE_FUNCTION
@@ -99,7 +91,6 @@ struct FixNeighHistoryKokkosPreExchangeFunctor {
 
 template <class DeviceType>
 struct FixNeighHistoryKokkosPostNeighborFunctor {
-  typedef DeviceType device_type;
   FixNeighHistoryKokkos<DeviceType> c;
   FixNeighHistoryKokkosPostNeighborFunctor(FixNeighHistoryKokkos<DeviceType> *c_ptr): c(*c_ptr) {}
   KOKKOS_INLINE_FUNCTION

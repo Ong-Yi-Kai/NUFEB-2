@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pythonpackaging
+DocumentNamespace: https://paraview.org/spdx/pythonpackaging
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:05Z
+
+##### Package: pythonpackaging
+
+PackageName: pythonpackaging
+SPDXID: SPDXRef-Package-pythonpackaging
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/packaging-23.1.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-2-Clause
+PackageLicenseDeclared: BSD-2-Clause
+PackageCopyrightText: <text>
+Copyright (c) Donald Stufft and individual contributors
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pythonpackaging

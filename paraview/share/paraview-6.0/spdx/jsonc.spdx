@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: jsonc
+DocumentNamespace: https://paraview.org/spdx/jsonc
+Creator: Tool: CMake
+Created: 2025-05-21T00:50:41Z
+
+##### Package: jsonc
+
+PackageName: jsonc
+SPDXID: SPDXRef-Package-jsonc
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/json-c-0.17-20230812.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright (c) 2009-2012 Eric Haszlakiewicz Copyright (c) 2004, 2005 Metaparadigm Pte Ltd
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-jsonc

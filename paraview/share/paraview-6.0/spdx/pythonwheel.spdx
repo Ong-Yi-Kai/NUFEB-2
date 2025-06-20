@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pythonwheel
+DocumentNamespace: https://paraview.org/spdx/pythonwheel
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:04Z
+
+##### Package: pythonwheel
+
+PackageName: pythonwheel
+SPDXID: SPDXRef-Package-pythonwheel
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/wheel-0.41.2-nounicodedist.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright (c) 2012 Daniel Holth and contributors
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pythonwheel

@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: VisItLib
+DocumentNamespace: https://paraview.org/spdx/VisItLib
+Creator: Tool: CMake
+Created: 2025-05-21T01:10:31Z
+
+##### Package: VisItLib
+
+PackageName: VisItLib
+SPDXID: SPDXRef-Package-VisItLib
+PackageDownloadLocation: git+https://gitlab.kitware.com/paraview/visitbridge.git@756b0aa4ee
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2000 - 2020, Lawrence Livermore National Security, LLC;copyright (C) 2007 martin isenburg@cs.unc.edu;Copyright (c) 2010, University of New Hampshire Computer Science Department;Copyright (c) 1993-2002 Ken Martin, Will Schroeder, Bill Lorensen
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-VisItLib

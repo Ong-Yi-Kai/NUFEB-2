@@ -54,6 +54,9 @@ class DumpImage : public DumpCustom {
   int fixcolor;                   // what determines color of fix objects
   double fixflag1, fixflag2;      // user-specified params for fix objects
 
+  int bacillusflag, bacilluscolor;  // NUFEB specific
+  int plasmidflag;
+
   int bondflag;         // 0/1 for draw bonds
   int bcolor, bdiam;    // what determines color/diam of bonds
   double bdiamvalue;    // bond diameter value
@@ -82,6 +85,8 @@ class DumpImage : public DumpCustom {
   class AtomVecLine *avec_line;    // ptrs to atom style (sub)classes
   class AtomVecTri *avec_tri;
   class AtomVecBody *avec_body;
+  // NUFEB specific
+  class AtomVecBacillus *avec_bacillus;
 
   class Fix *fixptr;    // ptr to Fix that provides image data
 

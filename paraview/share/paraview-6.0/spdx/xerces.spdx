@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: xerces
+DocumentNamespace: https://paraview.org/spdx/xerces
+Creator: Tool: CMake
+Created: 2025-05-21T00:52:06Z
+
+##### Package: xerces
+
+PackageName: xerces
+SPDXID: SPDXRef-Package-xerces
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/xerces-c-3.2.4.tar.xz
+FilesAnalyzed: False
+PackageLicenseConcluded: Apache-2.0
+PackageLicenseDeclared: Apache-2.0
+PackageCopyrightText: <text>
+Copyright The Apache Software Foundation copyright (c) 1999, IBM Corporation
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-xerces

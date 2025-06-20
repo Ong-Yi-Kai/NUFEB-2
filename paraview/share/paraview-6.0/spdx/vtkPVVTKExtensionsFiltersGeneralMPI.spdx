@@ -1,0 +1,22 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkPVVTKExtensionsFiltersGeneralMPI
+DocumentNamespace: https://paraview.org/spdx/vtkPVVTKExtensionsFiltersGeneralMPI
+Creator: Tool: CMake
+Created: 2025-05-21T01:17:26Z
+
+##### Package: vtkPVVTKExtensionsFiltersGeneralMPI
+
+PackageName: vtkPVVTKExtensionsFiltersGeneralMPI
+SPDXID: SPDXRef-Package-vtkPVVTKExtensionsFiltersGeneralMPI
+PackageDownloadLocation: https://gitlab.kitware.com/paraview/paraview/-/tree/master/VTKExtensions/FiltersGeneralMPI
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+Copyright (c) Kitware Inc.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkPVVTKExtensionsFiltersGeneralMPI

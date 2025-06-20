@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pythonpythran
+DocumentNamespace: https://paraview.org/spdx/pythonpythran
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:18Z
+
+##### Package: pythonpythran
+
+PackageName: pythonpythran
+SPDXID: SPDXRef-Package-pythonpythran
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/pythran-0.16.1.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2012, HPC Project and Serge Guelton
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pythonpythran

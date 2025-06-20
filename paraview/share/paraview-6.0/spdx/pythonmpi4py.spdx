@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pythonmpi4py
+DocumentNamespace: https://paraview.org/spdx/pythonmpi4py
+Creator: Tool: CMake
+Created: 2025-05-21T00:59:01Z
+
+##### Package: pythonmpi4py
+
+PackageName: pythonmpi4py
+SPDXID: SPDXRef-Package-pythonmpi4py
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/mpi4py-4.0.1.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-2-Clause
+PackageLicenseDeclared: BSD-2-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2021, Lisandro Dalcin
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pythonmpi4py

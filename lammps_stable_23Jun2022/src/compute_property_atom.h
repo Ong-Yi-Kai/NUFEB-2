@@ -41,6 +41,8 @@ class ComputePropertyAtom : public Compute {
   class AtomVecLine *avec_line;
   class AtomVecTri *avec_tri;
   class AtomVecBody *avec_body;
+  //NUFEB specific
+  class AtomVecBacillus *avec_bacillus;
 
   typedef void (ComputePropertyAtom::*FnPtrPack)(int);
   FnPtrPack *pack_choice;    // ptrs to pack functions
@@ -109,6 +111,7 @@ class ComputePropertyAtom : public Compute {
   void pack_tqx(int);
   void pack_tqy(int);
   void pack_tqz(int);
+  void pack_length(int);
 
   void pack_end1x(int);
   void pack_end1y(int);

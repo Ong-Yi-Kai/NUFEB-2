@@ -1,0 +1,26 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkRenderingFreeType
+DocumentNamespace: https://paraview.org/spdx/vtkRenderingFreeType
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:36Z
+
+##### Package: vtkRenderingFreeType
+
+PackageName: vtkRenderingFreeType
+SPDXID: SPDXRef-Package-vtkRenderingFreeType
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/Rendering/FreeType
+FilesAnalyzed: True
+PackageLicenseConcluded: Bitstream-Vera AND BSD-3-Clause AND Aladdin
+PackageLicenseDeclared: BSD-3-Clause
+PackageLicenseInfoFromFiles: Bitstream-Vera
+PackageLicenseInfoFromFiles: BSD-3-Clause
+PackageLicenseInfoFromFiles: Aladdin
+PackageCopyrightText: <text>
+Copyright (c) Bitstream (XFree86)
+Copyright (c) URW
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkRenderingFreeType

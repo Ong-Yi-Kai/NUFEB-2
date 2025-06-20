@@ -1,5 +1,10 @@
 # Settings that the LAMMPS build will import when this package library is used
-#
-nufeb_SYSINC =  
-nufeb_SYSLIB = 
+
+SBML_INC = -I../../../thirdparty/libsbml-5.20.5/build/libsbml/include
+SBML_PATH = -L../../../thirdparty/libsbml-5.20.5/build/libsbml/lib
+SBML_LIB = -lsbml
+
+
+nufeb_SYSINC =  ${SBML_INC}
+nufeb_SYSLIB = ${SBML_PATH} ${SBML_LIB}
 nufeb_SYSPATH = 

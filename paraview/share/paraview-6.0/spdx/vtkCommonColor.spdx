@@ -1,0 +1,24 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkCommonColor
+DocumentNamespace: https://paraview.org/spdx/vtkCommonColor
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:36Z
+
+##### Package: vtkCommonColor
+
+PackageName: vtkCommonColor
+SPDXID: SPDXRef-Package-vtkCommonColor
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/Common/Color
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause AND Apache-2.0 AND Apache-1.1 AND BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageLicenseInfoFromFiles: BSD-3-Clause AND Apache-2.0 AND Apache-1.1
+PackageLicenseInfoFromFiles: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2002 Cynthia Brewer, Mark Harrower, and PSU
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkCommonColor

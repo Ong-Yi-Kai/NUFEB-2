@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: mpi
+DocumentNamespace: https://paraview.org/spdx/mpi
+Creator: Tool: CMake
+Created: 2025-05-21T00:58:34Z
+
+##### Package: mpi
+
+PackageName: mpi
+SPDXID: SPDXRef-Package-mpi
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/mpich-4.1.2.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: mpich2
+PackageLicenseDeclared: mpich2
+PackageCopyrightText: <text>
+1998--2020, Argonne National Laboratory
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-mpi

@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pythonversioneer
+DocumentNamespace: https://paraview.org/spdx/pythonversioneer
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:13Z
+
+##### Package: pythonversioneer
+
+PackageName: pythonversioneer
+SPDXID: SPDXRef-Package-pythonversioneer
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/versioneer-0.29.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: Unlicense
+PackageLicenseDeclared: Unlicense
+PackageCopyrightText: <text>
+NONE
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pythonversioneer

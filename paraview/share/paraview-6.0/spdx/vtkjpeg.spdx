@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: jpeg
+DocumentNamespace: https://paraview.org/spdx/jpeg
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:35Z
+
+##### Package: jpeg
+
+PackageName: jpeg
+SPDXID: SPDXRef-Package-jpeg
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/libjpeg-turbo.git@for/vtk-20210727-2.1.0
+FilesAnalyzed: False
+PackageLicenseConcluded: IJG AND BSD-3-Clause AND ZLIB
+PackageLicenseDeclared: IJG AND BSD-3-Clause AND ZLIB
+PackageCopyrightText: <text>
+Copyright (C)2009-2021 D. R. Commander.;Copyright (C)2015 Viktor Szathmáry.;copyright (C) 1991-2020, Thomas G. Lane, Guido Vollbeding
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-jpeg

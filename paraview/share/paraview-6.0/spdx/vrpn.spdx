@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vrpn
+DocumentNamespace: https://paraview.org/spdx/vrpn
+Creator: Tool: CMake
+Created: 2025-05-21T00:51:15Z
+
+##### Package: vrpn
+
+PackageName: vrpn
+SPDXID: SPDXRef-Package-vrpn
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/vrpn_07.35.zip
+FilesAnalyzed: False
+PackageLicenseConcluded: BSL-1.0 AND BSD-3-Clause
+PackageLicenseDeclared: BSL-1.0 AND BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright The vrpn contributors Copyright (c) 2010, Alan Ott, Signal 11 Software
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vrpn

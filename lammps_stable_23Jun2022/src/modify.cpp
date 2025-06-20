@@ -61,6 +61,12 @@ Modify::Modify(LAMMPS *lmp) : Pointers(lmp)
 
   n_timeflag = -1;
 
+  // NUFEB specific
+  n_biology_nufeb = n_post_physics_nufeb = 0;
+  n_chemistry_nufeb = 0;
+  n_reactor_nufeb = 0;
+
+
   fix = nullptr;
   fmask = nullptr;
   list_initial_integrate = list_post_integrate = nullptr;
@@ -75,6 +81,11 @@ Modify::Modify(LAMMPS *lmp) : Pointers(lmp)
   list_min_pre_exchange = list_min_pre_neighbor = list_min_post_neighbor = nullptr;
   list_min_pre_force = list_min_pre_reverse = list_min_post_force = nullptr;
   list_min_energy = nullptr;
+
+  // NUFEB specific
+  list_biology_nufeb = list_post_physics_nufeb = nullptr;
+  list_chemistry_nufeb = nullptr;
+  list_reactor_nufeb = nullptr;
 
   end_of_step_every = nullptr;
 
@@ -160,8 +171,14 @@ Modify::~Modify()
   delete[] list_min_post_force;
   delete[] list_min_energy;
 
-  delete[] end_of_step_every;
-  delete[] list_timeflag;
+  // NUFEB specific
+  delete [] list_biology_nufeb;
+  delete [] list_post_physics_nufeb;
+  delete [] list_chemistry_nufeb;
+  delete [] list_reactor_nufeb;
+
+  delete [] end_of_step_every;
+  delete [] list_timeflag;
 
   restart_deallocate(0);
 
@@ -249,6 +266,12 @@ void Modify::init()
 
   n_post_force_any = n_post_force + n_post_force_group;
   n_post_force_respa_any = n_post_force_respa + n_post_force_group;
+
+  // NUFEB specific
+  list_init(BIOLOGY_NUFEB, n_biology_nufeb, list_biology_nufeb);
+  list_init(POST_PHYSICS_NUFEB, n_post_physics_nufeb, list_post_physics_nufeb);
+  list_init(CHEMISTRY_NUFEB, n_chemistry_nufeb, list_chemistry_nufeb);
+  list_init(REACTOR_NUFEB, n_reactor_nufeb, list_reactor_nufeb);
 
   // create list of computes that store invocation times
 
@@ -559,6 +582,48 @@ void Modify::create_attribute(int n)
     if (compute[i]->create_attribute) compute[i]->set_arrays(n);
   input->variable->set_arrays(n);
 }
+
+
+/* ----------------------------------------------------------------------
+   biology_nufeb call, only for relevant fixes
+------------------------------------------------------------------------- */
+
+void Modify::biology_nufeb()
+{
+  for (int i = 0; i < n_biology_nufeb; i++)
+    fix[list_biology_nufeb[i]]->biology_nufeb();
+}
+
+/* ----------------------------------------------------------------------
+   post_physics_nufeb call, only for relevant fixes
+------------------------------------------------------------------------- */
+
+void Modify::post_physics_nufeb()
+{
+  for (int i = 0; i < n_post_physics_nufeb; i++)
+    fix[list_post_physics_nufeb[i]]->post_physics_nufeb();
+}
+
+/* ----------------------------------------------------------------------
+   post_physics_nufeb call, only for relevant fixes
+------------------------------------------------------------------------- */
+
+void Modify::chemistry_nufeb()
+{
+  for (int i = 0; i < n_chemistry_nufeb; i++)
+    fix[list_chemistry_nufeb[i]]->chemistry_nufeb();
+}
+
+/* ----------------------------------------------------------------------
+   reactor_nufeb call, only for relevant fixes
+------------------------------------------------------------------------- */
+
+void Modify::reactor_nufeb()
+{
+  for (int i = 0; i < n_reactor_nufeb; i++)
+    fix[list_reactor_nufeb[i]]->reactor_nufeb();
+}
+
 
 /* ----------------------------------------------------------------------
    setup rRESPA pre_force call, only for relevant fixes

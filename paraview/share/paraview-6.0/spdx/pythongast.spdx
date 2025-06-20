@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pythongast
+DocumentNamespace: https://paraview.org/spdx/pythongast
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:09Z
+
+##### Package: pythongast
+
+PackageName: pythongast
+SPDXID: SPDXRef-Package-pythongast
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/gast-0.5.4.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright (c) 2016, Serge Guelton
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pythongast

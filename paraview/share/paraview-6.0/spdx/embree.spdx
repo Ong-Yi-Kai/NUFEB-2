@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: embree
+DocumentNamespace: https://paraview.org/spdx/embree
+Creator: Tool: CMake
+Created: 2025-05-21T00:50:43Z
+
+##### Package: embree
+
+PackageName: embree
+SPDXID: SPDXRef-Package-embree
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/embree-v3.13.1.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: Apache-2.0
+PackageLicenseDeclared: Apache-2.0
+PackageCopyrightText: <text>
+Copyright (c) Intel Corporation
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-embree

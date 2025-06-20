@@ -45,6 +45,7 @@ if [ $vtk_hdf -eq 2 ]; then
   cp Makefile.lammps_hdf5_vtk8.0 Makefile.lammps
 fi
 
+
 #### Build LAMMPS with NUFEB and user defined packages#####
 echo "Installing required packages.."
 

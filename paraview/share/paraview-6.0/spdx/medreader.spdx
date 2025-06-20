@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: medreader
+DocumentNamespace: https://paraview.org/spdx/medreader
+Creator: Tool: CMake
+Created: 2025-05-21T01:21:50Z
+
+##### Package: medreader
+
+PackageName: medreader
+SPDXID: SPDXRef-Package-medreader
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/paravis-10af712.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: LGPL-2.1-or-later
+PackageLicenseDeclared: LGPL-2.1-or-later
+PackageCopyrightText: <text>
+Copyright (C) CEA/DEN, EDF R&D
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-medreader

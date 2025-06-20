@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: fmt
+DocumentNamespace: https://paraview.org/spdx/fmt
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:34Z
+
+##### Package: fmt
+
+PackageName: fmt
+SPDXID: SPDXRef-Package-fmt
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/fmt.git@for/vtk-20250317-11.1.4
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright (c) 2012 - present, Victor Zverovich
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-fmt

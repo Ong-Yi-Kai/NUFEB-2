@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkRenderingLookingGlass
+DocumentNamespace: https://paraview.org/spdx/vtkRenderingLookingGlass
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:36Z
+
+##### Package: vtkRenderingLookingGlass
+
+PackageName: vtkRenderingLookingGlass
+SPDXID: SPDXRef-Package-vtkRenderingLookingGlass
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/Remote/RenderingLookingGlass
+FilesAnalyzed: True
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: <text>
+NOASSERTION
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkRenderingLookingGlass

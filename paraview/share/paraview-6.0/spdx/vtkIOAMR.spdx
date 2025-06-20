@@ -1,0 +1,22 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkIOAMR
+DocumentNamespace: https://paraview.org/spdx/vtkIOAMR
+Creator: Tool: CMake
+Created: 2025-05-21T01:09:56Z
+
+##### Package: vtkIOAMR
+
+PackageName: vtkIOAMR
+SPDXID: SPDXRef-Package-vtkIOAMR
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/IO/AMR
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+Copyright (c) 2000 - 2009, Lawrence Livermore National Security, LLC
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkIOAMR

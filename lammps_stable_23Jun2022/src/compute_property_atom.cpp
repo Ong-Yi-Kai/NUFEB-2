@@ -19,6 +19,7 @@
 #include "atom_vec.h"
 #include "atom_vec_body.h"
 #include "atom_vec_ellipsoid.h"
+#include "atom_vec_bacillus.h"
 #include "atom_vec_line.h"
 #include "atom_vec_tri.h"
 #include "comm.h"
@@ -231,25 +232,29 @@ ComputePropertyAtom::ComputePropertyAtom(LAMMPS *lmp, int narg, char **arg) :
     } else if (strcmp(arg[iarg],"quatw") == 0) {
       avec_ellipsoid = dynamic_cast<AtomVecEllipsoid *>(atom->style_match("ellipsoid"));
       avec_body = dynamic_cast<AtomVecBody *>(atom->style_match("body"));
-      if (!avec_ellipsoid && !avec_body && !atom->quat_flag)
+      avec_bacillus = dynamic_cast<AtomVecBacillus *>(atom->style_match("bacillus"));
+      if (!avec_ellipsoid && !avec_body && !atom->quat_flag && !avec_bacillus)
         error->all(FLERR,"Compute property/atom for atom property that isn't allocated");
       pack_choice[i] = &ComputePropertyAtom::pack_quatw;
     } else if (strcmp(arg[iarg],"quati") == 0) {
       avec_ellipsoid = dynamic_cast<AtomVecEllipsoid *>(atom->style_match("ellipsoid"));
+      avec_bacillus = dynamic_cast<AtomVecBacillus *>(atom->style_match("bacillus"));
       avec_body = dynamic_cast<AtomVecBody *>(atom->style_match("body"));
-      if (!avec_ellipsoid && !avec_body && !atom->quat_flag)
+      if (!avec_ellipsoid && !avec_body && !atom->quat_flag && !avec_bacillus)
         error->all(FLERR,"Compute property/atom for atom property that isn't allocated");
       pack_choice[i] = &ComputePropertyAtom::pack_quati;
     } else if (strcmp(arg[iarg],"quatj") == 0) {
       avec_ellipsoid = dynamic_cast<AtomVecEllipsoid *>(atom->style_match("ellipsoid"));
+      avec_bacillus = dynamic_cast<AtomVecBacillus *>(atom->style_match("bacillus"));
       avec_body = dynamic_cast<AtomVecBody *>(atom->style_match("body"));
-      if (!avec_ellipsoid && !avec_body && !atom->quat_flag)
+      if (!avec_ellipsoid && !avec_body && !atom->quat_flag && !avec_bacillus)
         error->all(FLERR,"Compute property/atom for atom property that isn't allocated");
       pack_choice[i] = &ComputePropertyAtom::pack_quatj;
     } else if (strcmp(arg[iarg],"quatk") == 0) {
       avec_ellipsoid = dynamic_cast<AtomVecEllipsoid *>(atom->style_match("ellipsoid"));
+      avec_bacillus = dynamic_cast<AtomVecBacillus *>(atom->style_match("bacillus"));
       avec_body = dynamic_cast<AtomVecBody *>(atom->style_match("body"));
-      if (!avec_ellipsoid && !avec_body && !atom->quat_flag)
+      if (!avec_ellipsoid && !avec_body && !atom->quat_flag && !avec_bacillus)
         error->all(FLERR,"Compute property/atom for atom property that isn't allocated");
       pack_choice[i] = &ComputePropertyAtom::pack_quatk;
 
@@ -266,6 +271,11 @@ ComputePropertyAtom::ComputePropertyAtom(LAMMPS *lmp, int narg, char **arg) :
         error->all(FLERR,"Compute property/atom for atom property that isn't allocated");
       pack_choice[i] = &ComputePropertyAtom::pack_tqz;
 
+    } else if (strcmp(arg[iarg],"length") == 0) {
+      avec_bacillus = dynamic_cast<AtomVecBacillus *>(atom->style_match("bacillus"));
+      if (!atom->bacillus_flag)
+        error->all(FLERR,"Compute property/atom for atom property that isn't allocated");
+      pack_choice[i] = &ComputePropertyAtom::pack_length;
     } else if (strcmp(arg[iarg],"end1x") == 0) {
       avec_line = dynamic_cast<AtomVecLine *>(atom->style_match("line"));
       if (!avec_line) error->all(FLERR,"Compute property/atom for atom property that isn't allocated");
@@ -410,6 +420,7 @@ ComputePropertyAtom::~ComputePropertyAtom()
 void ComputePropertyAtom::init()
 {
   avec_ellipsoid = dynamic_cast<AtomVecEllipsoid *>(atom->style_match("ellipsoid"));
+  avec_bacillus = dynamic_cast<AtomVecBacillus *>(atom->style_match("bacillus"));
   avec_line = dynamic_cast<AtomVecLine *>(atom->style_match("line"));
   avec_tri = dynamic_cast<AtomVecTri *>(atom->style_match("tri"));
   avec_body = dynamic_cast<AtomVecBody *>(atom->style_match("body"));
@@ -1319,6 +1330,24 @@ void ComputePropertyAtom::pack_shapez(int n)
 
 /* ---------------------------------------------------------------------- */
 
+void ComputePropertyAtom::pack_length(int n)
+{
+  if (avec_bacillus) {
+    AtomVecBacillus::Bonus *bonus = avec_bacillus->bonus;
+    int *bacillus = atom->bacillus;
+    int *mask = atom->mask;
+    int nlocal = atom->nlocal;
+
+    for (int i = 0; i < nlocal; i++) {
+      if ((mask[i] & groupbit) && bacillus[i] >= 0)
+        buf[n] = bonus[bacillus[i]].length;
+      else buf[n] = 0.0;
+      n += nvalues;
+    }
+  }
+}
+/* ---------------------------------------------------------------------- */
+
 void ComputePropertyAtom::pack_quatw(int n)
 {
   if (avec_ellipsoid) {
@@ -1346,6 +1375,18 @@ void ComputePropertyAtom::pack_quatw(int n)
       else buf[n] = 0.0;
       n += nvalues;
     }
+  } else if (avec_bacillus) {
+      AtomVecBacillus::Bonus *bonus = avec_bacillus->bonus;
+      int *bacillus = atom->bacillus;
+      int *mask = atom->mask;
+      int nlocal = atom->nlocal;
+
+      for (int i = 0; i < nlocal; i++) {
+          if ((mask[i] & groupbit) && bacillus[i] >= 0)
+              buf[n] = bonus[bacillus[i]].quat[0];
+          else buf[n] = 0.0;
+          n += nvalues;
+      }
   } else {
     double **quat = atom->quat;
     int *mask = atom->mask;
@@ -1389,6 +1430,18 @@ void ComputePropertyAtom::pack_quati(int n)
       else buf[n] = 0.0;
       n += nvalues;
     }
+  } else if (avec_bacillus) {
+      AtomVecBacillus::Bonus *bonus = avec_bacillus->bonus;
+      int *bacillus = atom->bacillus;
+      int *mask = atom->mask;
+      int nlocal = atom->nlocal;
+
+      for (int i = 0; i < nlocal; i++) {
+          if ((mask[i] & groupbit) && bacillus[i] >= 0)
+              buf[n] = bonus[bacillus[i]].quat[1];
+          else buf[n] = 0.0;
+          n += nvalues;
+      }
   } else {
     double **quat = atom->quat;
     int *mask = atom->mask;
@@ -1432,6 +1485,18 @@ void ComputePropertyAtom::pack_quatj(int n)
       else buf[n] = 0.0;
       n += nvalues;
     }
+  } else if (avec_bacillus) {
+      AtomVecBacillus::Bonus *bonus = avec_bacillus->bonus;
+      int *bacillus = atom->bacillus;
+      int *mask = atom->mask;
+      int nlocal = atom->nlocal;
+
+      for (int i = 0; i < nlocal; i++) {
+          if ((mask[i] & groupbit) && bacillus[i] >= 0)
+              buf[n] = bonus[bacillus[i]].quat[2];
+          else buf[n] = 0.0;
+          n += nvalues;
+      }
   } else {
     double **quat = atom->quat;
     int *mask = atom->mask;
@@ -1475,6 +1540,18 @@ void ComputePropertyAtom::pack_quatk(int n)
       else buf[n] = 0.0;
       n += nvalues;
     }
+  } else if (avec_bacillus) {
+      AtomVecBacillus::Bonus *bonus = avec_bacillus->bonus;
+      int *bacillus = atom->bacillus;
+      int *mask = atom->mask;
+      int nlocal = atom->nlocal;
+
+      for (int i = 0; i < nlocal; i++) {
+          if ((mask[i] & groupbit) && bacillus[i] >= 0)
+              buf[n] = bonus[bacillus[i]].quat[3];
+          else buf[n] = 0.0;
+          n += nvalues;
+      }
   } else {
     double **quat = atom->quat;
     int *mask = atom->mask;

@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pybind11
+DocumentNamespace: https://paraview.org/spdx/pybind11
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:10Z
+
+##### Package: pybind11
+
+PackageName: pybind11
+SPDXID: SPDXRef-Package-pybind11
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/pybind11-2.13.6.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2016 Wenzel Jakob
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pybind11

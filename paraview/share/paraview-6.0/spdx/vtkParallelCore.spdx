@@ -1,0 +1,23 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkParallelCore
+DocumentNamespace: https://paraview.org/spdx/vtkParallelCore
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:36Z
+
+##### Package: vtkParallelCore
+
+PackageName: vtkParallelCore
+SPDXID: SPDXRef-Package-vtkParallelCore
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/Parallel/Core
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Sandia Corporation
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+Copyright (c) Kitware, Inc.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkParallelCore

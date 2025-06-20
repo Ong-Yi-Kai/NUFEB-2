@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: expat
+DocumentNamespace: https://paraview.org/spdx/expat
+Creator: Tool: CMake
+Created: 2025-05-21T00:49:15Z
+
+##### Package: expat
+
+PackageName: expat
+SPDXID: SPDXRef-Package-expat
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/expat-2.7.0.tar.xz
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright (c) 1998-2000 Thai Open Source Software Center Ltd and Clark Cooper Copyright (c) 2001-2022 Expat maintainers
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-expat

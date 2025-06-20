@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: alembic
+DocumentNamespace: https://paraview.org/spdx/alembic
+Creator: Tool: CMake
+Created: 2025-05-21T00:49:09Z
+
+##### Package: alembic
+
+PackageName: alembic
+SPDXID: SPDXRef-Package-alembic
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/alembic-1.8.8.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright © 2009-2015 Lucasfilm Entertainment Company Ltd. or Lucasfilm Ltd.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-alembic

@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: openxrsdk
+DocumentNamespace: https://paraview.org/spdx/openxrsdk
+Creator: Tool: CMake
+Created: 2025-05-21T00:50:42Z
+
+##### Package: openxrsdk
+
+PackageName: openxrsdk
+SPDXID: SPDXRef-Package-openxrsdk
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/OpenXR-SDK-release-1.1.46.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: Apache-2.0
+PackageLicenseDeclared: Apache-2.0
+PackageCopyrightText: <text>
+Copyright (c) 2017-2023, The Khronos Group Inc.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-openxrsdk

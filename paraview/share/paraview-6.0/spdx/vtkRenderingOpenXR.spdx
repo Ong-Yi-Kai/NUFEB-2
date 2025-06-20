@@ -1,0 +1,25 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkRenderingOpenXR
+DocumentNamespace: https://paraview.org/spdx/vtkRenderingOpenXR
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:36Z
+
+##### Package: vtkRenderingOpenXR
+
+PackageName: vtkRenderingOpenXR
+SPDXID: SPDXRef-Package-vtkRenderingOpenXR
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/Rendering/OpenXR
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause AND BSD-3-Clause AND Apache-2.0
+PackageLicenseDeclared: BSD-3-Clause
+PackageLicenseInfoFromFiles: BSD-3-Clause
+PackageLicenseInfoFromFiles: BSD-3-Clause AND Apache-2.0
+PackageCopyrightText: <text>
+Copyright (c) 2015, Valve Corporation
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+Copyright (c) Microsoft
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkRenderingOpenXR

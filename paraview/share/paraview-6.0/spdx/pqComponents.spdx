@@ -1,0 +1,22 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pqComponents
+DocumentNamespace: https://paraview.org/spdx/pqComponents
+Creator: Tool: CMake
+Created: 2025-05-21T01:18:11Z
+
+##### Package: pqComponents
+
+PackageName: pqComponents
+SPDXID: SPDXRef-Package-pqComponents
+PackageDownloadLocation: https://gitlab.kitware.com/paraview/paraview/-/tree/master/Qt/Components
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Kitware Inc.
+Copyright (c) Sandia Corporation
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pqComponents

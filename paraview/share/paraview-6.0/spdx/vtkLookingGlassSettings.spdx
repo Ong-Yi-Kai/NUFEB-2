@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkLookingGlassSettings
+DocumentNamespace: https://paraview.org/spdx/vtkLookingGlassSettings
+Creator: Tool: CMake
+Created: 2025-05-21T01:18:59Z
+
+##### Package: vtkLookingGlassSettings
+
+PackageName: vtkLookingGlassSettings
+SPDXID: SPDXRef-Package-vtkLookingGlassSettings
+PackageDownloadLocation: https://gitlab.kitware.com/paraview/paraview/-/tree/master/Plugins/LookingGlass/Settings
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Kitware Inc.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkLookingGlassSettings

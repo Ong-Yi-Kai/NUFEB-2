@@ -1546,9 +1546,9 @@ int DumpVTK::parse_fields(int narg, char **arg)
 
   // customize by adding to if statement
   int i;
-  for (int iarg = 5; iarg < narg; iarg++) {
-    i = iarg-5;
-
+  for (int iarg = 0; iarg < narg; iarg++) {
+    // i = iarg-5;
+    i = iarg;
     if (strcmp(arg[iarg],"id") == 0) {
       pack_choice[ID] = &DumpVTK::pack_id;
       vtype[ID] = Dump::INT;

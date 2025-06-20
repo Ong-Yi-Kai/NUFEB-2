@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: cgns
+DocumentNamespace: https://paraview.org/spdx/cgns
+Creator: Tool: CMake
+Created: 2025-05-21T01:02:24Z
+
+##### Package: cgns
+
+PackageName: cgns
+SPDXID: SPDXRef-Package-cgns
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/cgns.git@for/vtk-20250124-4.5.0-2
+FilesAnalyzed: False
+PackageLicenseConcluded: Zlib
+PackageLicenseDeclared: Zlib
+PackageCopyrightText: <text>
+© Copyright 1991-2020, CGNS Steering Commmittee
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-cgns

@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: fast_float
+DocumentNamespace: https://paraview.org/spdx/fast_float
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:34Z
+
+##### Package: fast_float
+
+PackageName: fast_float
+SPDXID: SPDXRef-Package-fast_float
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/fast_float.git@for/vtk-20250313-8.0.2
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright (c) 2021 The fast_float authors
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-fast_float

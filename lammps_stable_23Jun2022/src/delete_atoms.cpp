@@ -19,6 +19,8 @@
 #include "atom_vec_ellipsoid.h"
 #include "atom_vec_line.h"
 #include "atom_vec_tri.h"
+// NUFEB
+#include "atom_vec_bacillus.h"
 #include "comm.h"
 #include "domain.h"
 #include "error.h"
@@ -151,6 +153,7 @@ void DeleteAtoms::command(int narg, char **arg)
   auto avec_line = dynamic_cast<AtomVecLine *>(atom->style_match("line"));
   auto avec_tri = dynamic_cast<AtomVecTri *>(atom->style_match("tri"));
   auto avec_body = dynamic_cast<AtomVecBody *>(atom->style_match("body"));
+  auto avec_bacillus = dynamic_cast<AtomVecBody *>(atom->style_match("bacillus"));
   bigint nlocal_bonus;
 
   if (atom->nellipsoids > 0) {
@@ -168,6 +171,10 @@ void DeleteAtoms::command(int narg, char **arg)
   if (atom->nbodies > 0) {
     nlocal_bonus = avec_body->nlocal_bonus;
     MPI_Allreduce(&nlocal_bonus, &atom->nbodies, 1, MPI_LMP_BIGINT, MPI_SUM, world);
+  }
+  if (atom->nbacilli > 0) {
+    nlocal_bonus = avec_bacillus->nlocal_bonus;
+    MPI_Allreduce(&nlocal_bonus, &atom->nbacilli, 1, MPI_LMP_BIGINT,MPI_SUM, world);
   }
 
   // reset atom->map if it exists

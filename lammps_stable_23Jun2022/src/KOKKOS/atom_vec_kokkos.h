@@ -1,8 +1,7 @@
-// clang-format off
 /* -*- c++ -*- ----------------------------------------------------------
    LAMMPS - Large-scale Atomic/Molecular Massively Parallel Simulator
-   https://www.lammps.org/, Sandia National Laboratories
-   LAMMPS development team: developers@lammps.org
+   http://lammps.sandia.gov, Sandia National Laboratories
+   Steve Plimpton, sjplimp@sandia.gov
 
    Copyright (2003) Sandia Corporation.  Under the terms of Contract
    DE-AC04-94AL85000 with Sandia Corporation, the U.S. Government retains
@@ -36,17 +35,16 @@ union d_ubuf {
 class AtomVecKokkos : public AtomVec {
  public:
   AtomVecKokkos(class LAMMPS *);
-
-  bigint roundup(bigint) override;
-  int pack_comm(int, int *, double *, int, int *) override;
-  int pack_comm_vel(int, int *, double *, int, int *) override;
-  void unpack_comm(int, int, double *) override;
-  void unpack_comm_vel(int, int, double *) override;
-  int pack_reverse(int, int, double *) override;
-  void unpack_reverse(int, int *, double *) override;
-  void data_vel(int, const std::vector<std::string> &) override;
-  void pack_vel(double **) override;
-  void write_vel(FILE *, int, double **) override;
+  virtual ~AtomVecKokkos() {}
+  virtual int pack_comm(int, int *, double *, int, int *);
+  virtual int pack_comm_vel(int, int *, double *, int, int *);
+  virtual void unpack_comm(int, int, double *);
+  virtual void unpack_comm_vel(int, int, double *);
+  virtual int pack_reverse(int, int, double *);
+  virtual void unpack_reverse(int, int *, double *);
+  virtual void data_vel(int, char **);
+  virtual void pack_vel(double **);
+  virtual void write_vel(FILE *, int, double **);
 
   virtual void sync(ExecutionSpace space, unsigned int mask) = 0;
   virtual void modified(ExecutionSpace space, unsigned int mask) = 0;
@@ -126,9 +124,15 @@ class AtomVecKokkos : public AtomVec {
                            int nlocal, int dim, X_FLOAT lo, X_FLOAT hi,
                            ExecutionSpace space) = 0;
 
+  virtual int
+    unpack_exchange_kokkos(DAT::tdual_xfloat_2d &k_buf, DAT::tdual_int_1d &indices, int nrecv,
+                           int nlocal, int dim, X_FLOAT lo, X_FLOAT hi,
+                           ExecutionSpace space) { return 0; }
+
 
   int no_comm_vel_flag,no_border_vel_flag;
-
+  int unpack_exchange_indices_flag;
+  
  protected:
 
   HAT::t_x_array h_x;
@@ -179,7 +183,7 @@ class AtomVecKokkos : public AtomVec {
     }
     mirror_type tmp_view((typename ViewType::value_type*)buffer, src.d_view.layout());
 
-    if (space == Device) {
+    if(space == Device) {
       Kokkos::deep_copy(LMPHostType(),tmp_view,src.h_view),
       Kokkos::deep_copy(LMPHostType(),src.d_view,tmp_view);
       src.clear_sync_state();
@@ -192,7 +196,7 @@ class AtomVecKokkos : public AtomVec {
   #else
   template<class ViewType>
   void perform_async_copy(ViewType& src, unsigned int space) {
-    if (space == Device)
+    if(space == Device)
       src.template sync<LMPDeviceType>();
     else
       src.template sync<LMPHostType>();
@@ -204,3 +208,6 @@ class AtomVecKokkos : public AtomVec {
 
 #endif
 
+/* ERROR/WARNING messages:
+
+*/

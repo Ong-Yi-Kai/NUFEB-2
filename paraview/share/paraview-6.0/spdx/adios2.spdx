@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: adios2
+DocumentNamespace: https://paraview.org/spdx/adios2
+Creator: Tool: CMake
+Created: 2025-05-21T00:59:13Z
+
+##### Package: adios2
+
+PackageName: adios2
+SPDXID: SPDXRef-Package-adios2
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/adios-v2.10.2.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: Apache-2.0
+PackageLicenseDeclared: Apache-2.0
+PackageCopyrightText: <text>
+Copyright Oak Ridge National Laboratory and Contributors
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-adios2

@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: rapidjson
+DocumentNamespace: https://paraview.org/spdx/rapidjson
+Creator: Tool: CMake
+Created: 2025-05-21T00:48:58Z
+
+##### Package: rapidjson
+
+PackageName: rapidjson
+SPDXID: SPDXRef-Package-rapidjson
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/rapidjson-1.1.0.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT AND BSD-3-Clause AND JSON
+PackageLicenseDeclared: MIT AND BSD-3-Clause AND JSON
+PackageCopyrightText: <text>
+Copyright (C) 2015 THL A29 Limited, a Tencent company, and Milo Yip Copyright (c) 2006-2013 Alexander Chemeris Copyright (c) 2002 JSON.org
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-rapidjson

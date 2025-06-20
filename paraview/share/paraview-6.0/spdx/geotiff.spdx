@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: geotiff
+DocumentNamespace: https://paraview.org/spdx/geotiff
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:29Z
+
+##### Package: geotiff
+
+PackageName: geotiff
+SPDXID: SPDXRef-Package-geotiff
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/libgeotiff-1.7.1.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright (c) 1999, Frank Warmerdam copyright (c) 1995   Niles D. Ritter
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-geotiff

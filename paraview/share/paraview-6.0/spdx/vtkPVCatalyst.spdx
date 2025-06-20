@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkPVCatalyst
+DocumentNamespace: https://paraview.org/spdx/vtkPVCatalyst
+Creator: Tool: CMake
+Created: 2025-05-21T01:18:11Z
+
+##### Package: vtkPVCatalyst
+
+PackageName: vtkPVCatalyst
+SPDXID: SPDXRef-Package-vtkPVCatalyst
+PackageDownloadLocation: https://gitlab.kitware.com/paraview/paraview/-/tree/master/Clients/Catalyst
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Kitware Inc.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkPVCatalyst

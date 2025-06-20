@@ -1,0 +1,23 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkRemotingExport
+DocumentNamespace: https://paraview.org/spdx/vtkRemotingExport
+Creator: Tool: CMake
+Created: 2025-05-21T01:17:49Z
+
+##### Package: vtkRemotingExport
+
+PackageName: vtkRemotingExport
+SPDXID: SPDXRef-Package-vtkRemotingExport
+PackageDownloadLocation: https://gitlab.kitware.com/paraview/paraview/-/tree/master/Remoting/Export
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Kitware Inc.
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+Copyright (c) Kristian Sons
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkRemotingExport

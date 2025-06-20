@@ -1,4 +1,3 @@
-// clang-format off
 /* ----------------------------------------------------------------------
    LAMMPS - Large-scale Atomic/Molecular Massively Parallel Simulator
    https://www.lammps.org/, Sandia National Laboratories
@@ -37,7 +36,7 @@
 using namespace LAMMPS_NS;
 
 enum{II,IJ};
-enum{ELLIPSOID,LINE,TRIANGLE,BODY};   // also in AtomVecHybrid
+enum{ELLIPSOID,LINE,TRIANGLE,BODY,BACILLUS};   // also in AtomVecHybrid, NUFEB specific
 
 /* ---------------------------------------------------------------------- */
 
@@ -209,6 +208,7 @@ void WriteData::write(const std::string &file)
   if (natoms && atom->line_flag) bonus(LINE);
   if (natoms && atom->tri_flag) bonus(TRIANGLE);
   if (natoms && atom->body_flag) bonus(BODY);
+  if (natoms && atom->bacillus_flag) bonus(BACILLUS);  // NUFEB specific
 
   // extra sections managed by fixes
 
@@ -263,6 +263,7 @@ void WriteData::header()
   if (atom->line_flag) fmt::print(fp,"{} lines\n",atom->nlines);
   if (atom->tri_flag) fmt::print(fp,"{} triangles\n",atom->ntris);
   if (atom->body_flag) fmt::print(fp,"{} bodies\n",atom->nbodies);
+  if (atom->bacillus_flag) fmt::print(fp,"{} bacilli\n",atom->nbacilli);
 
   // fix info
 
@@ -695,6 +696,7 @@ void WriteData::bonus(int flag)
     if (flag == LINE)      fputs("\nLines\n\n",fp);
     if (flag == TRIANGLE)  fputs("\nTriangles\n\n",fp);
     if (flag == BODY)      fputs("\nBodies\n\n",fp);
+    if (flag == BACILLUS)      fputs("\nBacilli\n\n",fp);
 
     for (int iproc = 0; iproc < nprocs; iproc++) {
       if (iproc) {

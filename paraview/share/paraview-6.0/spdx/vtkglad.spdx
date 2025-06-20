@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: glad
+DocumentNamespace: https://paraview.org/spdx/glad
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:36Z
+
+##### Package: glad
+
+PackageName: glad
+SPDXID: SPDXRef-Package-glad
+PackageDownloadLocation: git+https://github.com/Dav1dde/glad/tree/glad2
+FilesAnalyzed: False
+PackageLicenseConcluded: GLAD
+PackageLicenseDeclared: GLAD
+PackageCopyrightText: <text>
+Copyright (c) 2013-2022 David Herberth, Copyright (c) 2013-2020 The Khronos Group Inc., 
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-glad

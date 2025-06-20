@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: kissfft
+DocumentNamespace: https://paraview.org/spdx/kissfft
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:34Z
+
+##### Package: kissfft
+
+PackageName: kissfft
+SPDXID: SPDXRef-Package-kissfft
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/kissfft.git@for/vtk-20211123-master-g6f09c27
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2003-2010 Mark Borgerding
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-kissfft

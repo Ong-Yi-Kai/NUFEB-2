@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: tiff
+DocumentNamespace: https://paraview.org/spdx/tiff
+Creator: Tool: CMake
+Created: 2025-05-21T00:49:47Z
+
+##### Package: tiff
+
+PackageName: tiff
+SPDXID: SPDXRef-Package-tiff
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/tiff-4.5.1.tar.xz
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright (c) 1988-1997 Sam Leffler Copyright (c) 1991-1997 Silicon Graphics, Inc.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-tiff

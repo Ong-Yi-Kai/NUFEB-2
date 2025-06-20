@@ -37,6 +37,8 @@
 #include <algorithm>
 #include <cstring>
 
+#include <iostream>
+
 #ifdef LMP_GPU
 #include "fix_gpu.h"
 #include <cmath>
@@ -671,6 +673,7 @@ void Atom::create_avec(const std::string &style, int narg, char **arg, int trysu
 
   if (sflag) {
     std::string estyle = style + "/";
+    std::cout << "Using atom style: " << estyle << std::endl;
     if (sflag == 1) estyle += lmp->suffix;
     else estyle += lmp->suffix2;
     atom_style = utils::strdup(estyle);

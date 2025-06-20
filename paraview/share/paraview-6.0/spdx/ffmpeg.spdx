@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: ffmpeg
+DocumentNamespace: https://paraview.org/spdx/ffmpeg
+Creator: Tool: CMake
+Created: 2025-05-21T00:50:42Z
+
+##### Package: ffmpeg
+
+PackageName: ffmpeg
+SPDXID: SPDXRef-Package-ffmpeg
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/ffmpeg-6.0.tar.xz
+FilesAnalyzed: False
+PackageLicenseConcluded: LGPL-2.1-or-later
+PackageLicenseDeclared: LGPL-2.1-or-later
+PackageCopyrightText: <text>
+Copyright (c) the FFmpeg developers
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-ffmpeg

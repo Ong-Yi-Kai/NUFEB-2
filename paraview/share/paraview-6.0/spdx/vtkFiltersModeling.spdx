@@ -1,0 +1,23 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkFiltersModeling
+DocumentNamespace: https://paraview.org/spdx/vtkFiltersModeling
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:36Z
+
+##### Package: vtkFiltersModeling
+
+PackageName: vtkFiltersModeling
+SPDXID: SPDXRef-Package-vtkFiltersModeling
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/Filters/Modeling
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2011 LTSI INSERM U642
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+Copyright (c) Goodwin Lawlor All rights reserved
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkFiltersModeling

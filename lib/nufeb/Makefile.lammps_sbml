@@ -1,0 +1,9 @@
+# Settings for building LAMMPS with libsbml support
+
+SBML_INC = -I$(HOME)/Research/J2Lab/Bacteria/NUFEB-2/thirdparty/libsbml-5.20.5/build/libsbml/include
+SBML_PATH = -L$(HOME)/Research/J2Lab/Bacteria/NUFEB-2/thirdparty/libsbml-5.20.5/build/libsbml/lib
+SBML_LIB = -lsbml
+
+nufeb_SYSINC = ${SBML_INC}
+nufeb_SYSLIB = ${SBML_PATH} ${SBML_LIB}
+nufeb_SYSPATH = 

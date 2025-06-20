@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: openimagedenoise
+DocumentNamespace: https://paraview.org/spdx/openimagedenoise
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:15Z
+
+##### Package: openimagedenoise
+
+PackageName: openimagedenoise
+SPDXID: SPDXRef-Package-openimagedenoise
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/oidn-1.4.1.src.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: Apache-2.0
+PackageLicenseDeclared: Apache-2.0
+PackageCopyrightText: <text>
+Copyright Intel Corporation
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-openimagedenoise

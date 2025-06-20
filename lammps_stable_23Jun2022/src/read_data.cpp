@@ -20,6 +20,7 @@
 #include "atom_vec_ellipsoid.h"
 #include "atom_vec_line.h"
 #include "atom_vec_tri.h"
+#include "atom_vec_bacillus.h"  // NUFEB specific
 #include "bond.h"
 #include "comm.h"
 #include "dihedral.h"
@@ -59,7 +60,8 @@ static std::unordered_set<std::string> section_keywords = {
   "Dihedral Coeffs", "Improper Coeffs",
   "BondBond Coeffs", "BondAngle Coeffs", "MiddleBondTorsion Coeffs",
   "EndBondTorsion Coeffs", "AngleTorsion Coeffs",
-  "AngleAngleTorsion Coeffs", "BondBond13 Coeffs", "AngleAngle Coeffs"
+  "AngleAngleTorsion Coeffs", "BondBond13 Coeffs", "AngleAngle Coeffs",
+  "Bacilli"
 };
 
 // function to check whether a string is a known data section name
@@ -106,6 +108,9 @@ ReadData::ReadData(LAMMPS *lmp) : Command(lmp)
   avec_tri = dynamic_cast<AtomVecTri *>(atom->style_match("tri"));
   nbodies = 0;
   avec_body = (AtomVecBody *) atom->style_match("body");
+  //NUFEB-package
+  nbacilli = 0;
+  avec_bacillus = (AtomVecBacillus *) atom->style_match("bacillus");
 }
 
 /* ---------------------------------------------------------------------- */
@@ -427,11 +432,11 @@ void ReadData::command(int narg, char **arg)
 
   int atomflag,topoflag;
   int bondflag,angleflag,dihedralflag,improperflag;
-  int ellipsoidflag,lineflag,triflag,bodyflag;
+  int ellipsoidflag,lineflag,triflag,bodyflag,bacillusflag;
 
   atomflag = topoflag = 0;
   bondflag = angleflag = dihedralflag = improperflag = 0;
-  ellipsoidflag = lineflag = triflag = bodyflag = 0;
+  ellipsoidflag = lineflag = triflag = bodyflag = bacillusflag = 0;
 
   // values in this data file
 
@@ -577,6 +582,13 @@ void ReadData::command(int narg, char **arg)
         if (firstpass)
           bonus(nellipsoids,(AtomVec *) avec_ellipsoid,"ellipsoids");
         else skip_lines(nellipsoids);
+
+      } else if (strcmp(keyword,"Bacilli") == 0) {
+        bacillusflag = 1;
+        if (!avec_bacillus) error->all(FLERR,"Invalid data file section: Bacilli");
+        if (atomflag == 0) error->all(FLERR,"Must read Atoms before Bacilli");
+        if (firstpass) bonus(nbacilli,(AtomVec *) avec_bacillus,"Bacilli");
+        else skip_lines(nbacilli);
 
       } else if (strcmp(keyword,"Lines") == 0) {
         lineflag = 1;
@@ -1025,6 +1037,14 @@ void ReadData::header(int firstpass)
       if (addflag == NONE) atom->nellipsoids = nellipsoids;
       else if (firstpass) atom->nellipsoids += nellipsoids;
 
+    } else if (utils::strmatch(line,"^\\s*\\d+\\s+bacilli\\s")) {
+      // NUFEB specific
+        if (!avec_bacillus)
+          error->all(FLERR,"No bacilli allowed with this atom style");
+        nbacilli = utils::bnumeric(FLERR, words[0], false, lmp);
+        if (addflag == NONE) atom->nbacilli = nbacilli;
+        else if (firstpass) atom->nbacilli += nbacilli;
+
     } else if (utils::strmatch(line,"^\\s*\\d+\\s+lines\\s")) {
       if (!avec_line) error->all(FLERR,"No lines allowed with this atom style");
       nlines = utils::bnumeric(FLERR, words[0], false, lmp);
@@ -1135,6 +1155,7 @@ void ReadData::header(int firstpass)
 
   if (atom->natoms < 0 || atom->natoms >= MAXBIGINT ||
       atom->nellipsoids < 0 || atom->nellipsoids >= MAXBIGINT ||
+      atom->nbacilli < 0 || atom->nbacilli >= MAXBIGINT ||
       atom->nlines < 0 || atom->nlines >= MAXBIGINT ||
       atom->ntris < 0 || atom->ntris >= MAXBIGINT ||
       atom->nbodies < 0 || atom->nbodies >= MAXBIGINT ||

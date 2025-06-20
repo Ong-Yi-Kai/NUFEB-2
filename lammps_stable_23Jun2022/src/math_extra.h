@@ -78,6 +78,7 @@ void rotate(double matrix[3][3], int i, int j, int k, int l, double s, double ta
 void richardson(double *q, double *m, double *w, double *moments, double dtq);
 void richardson_sphere(double *q, double *w, double dtq);
 void no_squish_rotate(int k, double *p, double *q, double *inertia, double dt);
+int jacobi(double matrix[3][3], double *evalues, double evectors[3][3]);
 
 // shape matrix operations
 // upper-triangular 3x3 matrix stored in Voigt ordering as 6-vector
@@ -340,8 +341,8 @@ void MathExtra::col2mat(const double *ex, const double *ey, const double *ez, do
 inline double MathExtra::det3(const double m[3][3])
 {
   double ans = m[0][0] * m[1][1] * m[2][2] - m[0][0] * m[1][2] * m[2][1] -
-      m[1][0] * m[0][1] * m[2][2] + m[1][0] * m[0][2] * m[2][1] + m[2][0] * m[0][1] * m[1][2] -
-      m[2][0] * m[0][2] * m[1][1];
+               m[1][0] * m[0][1] * m[2][2] + m[1][0] * m[0][2] * m[2][1] + m[2][0] * m[0][1] * m[1][2] -
+               m[2][0] * m[0][2] * m[1][1];
   return ans;
 }
 

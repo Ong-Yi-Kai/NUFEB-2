@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: utf8
+DocumentNamespace: https://paraview.org/spdx/utf8
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:34Z
+
+##### Package: utf8
+
+PackageName: utf8
+SPDXID: SPDXRef-Package-utf8
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/utfcpp.git@for/vtk-20181015-2.3.4
+FilesAnalyzed: False
+PackageLicenseConcluded: BSL-1.0
+PackageLicenseDeclared: BSL-1.0
+PackageCopyrightText: <text>
+Copyright 2006 Nemanja Trifunovic
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-utf8

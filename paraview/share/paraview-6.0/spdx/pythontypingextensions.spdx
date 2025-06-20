@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pythontypingextensions
+DocumentNamespace: https://paraview.org/spdx/pythontypingextensions
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:05Z
+
+##### Package: pythontypingextensions
+
+PackageName: pythontypingextensions
+SPDXID: SPDXRef-Package-pythontypingextensions
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/typing_extensions-4.7.1.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: PSF-2.0
+PackageLicenseDeclared: PSF-2.0
+PackageCopyrightText: <text>
+Copyright Guido van Rossum, Jukka Lehtosalo, Łukasz Langa, Michael Lee
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pythontypingextensions

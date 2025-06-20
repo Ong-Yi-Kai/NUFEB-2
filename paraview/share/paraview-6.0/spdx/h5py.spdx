@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: h5py
+DocumentNamespace: https://paraview.org/spdx/h5py
+Creator: Tool: CMake
+Created: 2025-05-21T01:00:06Z
+
+##### Package: h5py
+
+PackageName: h5py
+SPDXID: SPDXRef-Package-h5py
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/h5py-3.9.0.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2008 Andrew Collette and contributors
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-h5py

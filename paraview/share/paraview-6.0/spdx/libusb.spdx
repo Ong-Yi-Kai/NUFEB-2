@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: libusb
+DocumentNamespace: https://paraview.org/spdx/libusb
+Creator: Tool: CMake
+Created: 2025-05-21T00:50:44Z
+
+##### Package: libusb
+
+PackageName: libusb
+SPDXID: SPDXRef-Package-libusb
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/libusb-1.0.26.tar.bz2
+FilesAnalyzed: False
+PackageLicenseConcluded: LGPL-2.1-or-later
+PackageLicenseDeclared: LGPL-2.1-or-later
+PackageCopyrightText: <text>
+Copyright © 2001 Johannes Erdfelt Copyright © 2007-2009 Daniel Drake Copyright © 2010-2012 Peter Stuge Copyright © 2008-2016 Nathan Hjelm Copyright © 2009-2013 Pete Batard Copyright © 2009-2013 Ludovic Rousseau Copyright © 2010-2012 Michael Plante Copyright © 2011-2013 Hans de Goede Copyright © 2012-2013 Martin Pieuchot Copyright © 2012-2013 Toby Gray Copyright © 2013-2018 Chris Dickens
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-libusb

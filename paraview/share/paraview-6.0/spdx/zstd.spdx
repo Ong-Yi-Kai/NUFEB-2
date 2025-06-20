@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: zstd
+DocumentNamespace: https://paraview.org/spdx/zstd
+Creator: Tool: CMake
+Created: 2025-05-21T00:49:12Z
+
+##### Package: zstd
+
+PackageName: zstd
+SPDXID: SPDXRef-Package-zstd
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/zstd-1.5.5.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Meta Platforms, Inc. and affiliates
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-zstd

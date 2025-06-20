@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: glproto
+DocumentNamespace: https://paraview.org/spdx/glproto
+Creator: Tool: CMake
+Created: 2025-05-21T00:49:24Z
+
+##### Package: glproto
+
+PackageName: glproto
+SPDXID: SPDXRef-Package-glproto
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/glproto-1.4.17.tar.bz2
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright (C) 1991-2000 Silicon Graphics, Inc
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-glproto

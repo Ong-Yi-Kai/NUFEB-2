@@ -1,0 +1,24 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkMooseXfemClip
+DocumentNamespace: https://paraview.org/spdx/vtkMooseXfemClip
+Creator: Tool: CMake
+Created: 2025-05-21T01:19:00Z
+
+##### Package: vtkMooseXfemClip
+
+PackageName: vtkMooseXfemClip
+SPDXID: SPDXRef-Package-vtkMooseXfemClip
+PackageDownloadLocation: https://gitlab.kitware.com/paraview/paraview/-/tree/master/Plugins/MooseXfemClip/Filters
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+Copyright (c) 2017 Battelle Energy Alliance, LLC
+Copyright (c) Kitware Inc. Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen Copyright (c) 2017 Battelle Energy Alliance, LLC All rights reserved.
+Copyright (c) Kitware Inc.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkMooseXfemClip

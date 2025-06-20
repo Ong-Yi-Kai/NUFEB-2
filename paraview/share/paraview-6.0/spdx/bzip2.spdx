@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: bzip2
+DocumentNamespace: https://paraview.org/spdx/bzip2
+Creator: Tool: CMake
+Created: 2025-05-21T00:48:48Z
+
+##### Package: bzip2
+
+PackageName: bzip2
+SPDXID: SPDXRef-Package-bzip2
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/bzip2-1.0.8.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-4-Clause
+PackageLicenseDeclared: BSD-4-Clause
+PackageCopyrightText: <text>
+copyright (C) 1996-2019 Julian R Seward
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-bzip2

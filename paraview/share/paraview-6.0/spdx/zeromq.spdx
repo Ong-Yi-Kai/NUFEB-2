@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: zeromq
+DocumentNamespace: https://paraview.org/spdx/zeromq
+Creator: Tool: CMake
+Created: 2025-05-21T00:50:49Z
+
+##### Package: zeromq
+
+PackageName: zeromq
+SPDXID: SPDXRef-Package-zeromq
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/zeromq-4.3.4.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: LGPL-3.0-linking-exception
+PackageLicenseDeclared: LGPL-3.0-linking-exception
+PackageCopyrightText: <text>
+Copyright (c) 2007-2014 iMatix Corporation Copyright (c) 2009-2011 250bpm s.r.o. Copyright (c) 2010-2011 Miru Limited Copyright (c) 2011 VMware, Inc. Copyright (c) 2012 Spotify AB Copyright (c) 2013 Ericsson AB Copyright (c) 2014 AppDynamics Inc. Copyright (c) 2015 Google, Inc. Copyright (c) 2015-2016 Brocade Communications Systems Inc. Copyright Individual zeromq Contributors
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-zeromq

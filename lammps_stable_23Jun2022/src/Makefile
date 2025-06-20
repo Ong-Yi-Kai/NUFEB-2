@@ -138,7 +138,12 @@ PACKAGE = \
 	dielectric \
 	electrode \
 	ml-iap \
-	phonon
+	phonon \
+	nufeb \
+	hdf5 \
+	mutation \
+	plasmid \
+	t6ss # NUFEB-specific
 
 # NOTE: the last four packages must remain at the end since
 # they depend on other packages to be installed first.
@@ -150,7 +155,7 @@ PACKMOST = \
 	bocs \
 	body \
 	bpm \
-        brownian \
+	brownian \
 	cg-dna \
 	cg-sdk \
 	class2 \
@@ -198,7 +203,12 @@ PACKMOST = \
 	yaff \
 	dielectric \
 	ml-iap \
-	phonon
+	phonon \
+	nufeb \
+	hdf5 \
+	mutation \
+	plasmid \
+    t6ss 
 
 # NOTE ^^^^^: the last three packages must remain at the end since
 # they depend on other packages to be installed first.
@@ -232,7 +242,9 @@ PACKLIB = \
 	scafacos \
 	machdyn \
 	vtk \
-	electrode
+	electrode \
+	hdf5 \
+	nufeb \
 
 PACKSYS = compress latboltz mpiio python
 

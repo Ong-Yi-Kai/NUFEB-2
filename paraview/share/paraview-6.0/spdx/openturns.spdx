@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: openturns
+DocumentNamespace: https://paraview.org/spdx/openturns
+Creator: Tool: CMake
+Created: 2025-05-21T00:51:56Z
+
+##### Package: openturns
+
+PackageName: openturns
+SPDXID: SPDXRef-Package-openturns
+PackageDownloadLocation: https://github.com/openturns/openturns/archive/refs/tags/v1.23.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: LGPL-3.0-or-later AND MIT AND BSD-3-Clause
+PackageLicenseDeclared: LGPL-3.0-or-later AND MIT AND BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright 2005-2024 Airbus-EDF-IMACS-ONERA-Phimeca Copyright (C) 2007 Takashi Takekawa. Copyright (c) 2003-2010 Mark Borgerding Copyright (c) 1999-2023 Arash Partow Copyright (c) 1992, Michael J. D. Powell Copyright (c) 2004, Jean-Sebastien Roy Copyright (C) 2010 David Simcha Copyright (c) 2012 Massachusetts Institute of Technology Copyright 1984, 1995, 2000 by Stephen L. Moshier Copyright (C) 2008-2010 Leo Liberti Copyright (c) 2002-2005, Jean-Sebastien Roy
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-openturns

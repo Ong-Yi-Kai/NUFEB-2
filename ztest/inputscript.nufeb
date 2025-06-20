@@ -1,0 +1,56 @@
+# --------- Minimal NUFEB Simulation --------- #
+units si                
+atom_style gsmm       
+atom_modify map array sort 10 0     
+boundary pp pp ff                   
+newton off 
+processors * * 1
+comm_modify vel yes                 
+read_data atom.in
+
+# ----- functional groups ----- #
+group ECOLI type 1
+neighbor 5e-7 bin
+neigh_modify check yes
+
+# ----- Mesh Grid and Substrates ----- #
+grid_style nufeb/gsmm 4 sub o2 no2 no3 4e-6
+grid_modify set sub dd dd dd 1e-4
+grid_modify set o2 pp pp nd 1e-4
+grid_modify set no2 pp pp nd 1e-3
+grid_modify set no3 pp pp nd 1e-4
+
+# ----- Bio processes: Growth and Division ----- #
+fix growth_gsmm ECOLI nufeb/growth/gsmm fpath ./EColi.xml exchange_mets M_glc_D_e,M_o2_e  
+fix div ECOLI nufeb/division/coccus 1.36e-6 1234
+
+# ----- Physical Processes ----- #
+pair_style gran/hooke/history 1e-4 NULL 1e-5 NULL 0.0 0
+pair_coeff * *
+
+fix wall all wall/gran hooke/history 1e-3 NULL 1e-4 NULL 0 0 zplane 0.0 1e-04
+fix vis all viscous 1e-5
+fix nve all nve/limit 1e-7
+
+# ----- Post Physical: Diffusion ----- #
+fix coeff_sub all nufeb/diffusion_coeff sub ratio 0.8
+fix diff_sub all nufeb/diffusion_reaction sub 1.6e-9
+
+# ----- Logging information ----- #
+variable mass equal "mass(all)"
+variable necoli equal "count(ECOLI)"
+
+# VTK 
+# shell mkdir vtk
+# dump du1 all vtk 1 vtk/dump*.vtu id type diameter 
+# dump du2 all grid/vtk 1 vtk/dump_%_*.vti con rea den gro
+
+
+thermo_style custom step cpu atoms v_necoli v_mass
+thermo 10
+
+# ----- RUN ----- # 
+run_style nufeb diffdt 1e-4 difftol 1e-6 pairdt 1e-2 pairtol 1 pairmax 10 diffmax 1000
+timestep 1000
+run 10
+

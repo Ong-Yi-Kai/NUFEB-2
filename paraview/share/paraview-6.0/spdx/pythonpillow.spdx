@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pythonpillow
+DocumentNamespace: https://paraview.org/spdx/pythonpillow
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:19Z
+
+##### Package: pythonpillow
+
+PackageName: pythonpillow
+SPDXID: SPDXRef-Package-pythonpillow
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/Pillow-10.0.0.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: HPND
+PackageLicenseDeclared: HPND
+PackageCopyrightText: <text>
+Copyright © 1997-2011 by Secret Labs AB Copyright © 1995-2011 by Fredrik Lundh Copyright © 2010-2023 by Jeffrey A. Clark (Alex) and contributors
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pythonpillow

@@ -1,0 +1,25 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkFiltersTemporal
+DocumentNamespace: https://paraview.org/spdx/vtkFiltersTemporal
+Creator: Tool: CMake
+Created: 2025-05-21T01:02:24Z
+
+##### Package: vtkFiltersTemporal
+
+PackageName: vtkFiltersTemporal
+SPDXID: SPDXRef-Package-vtkFiltersTemporal
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/Filters/Temporal
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause AND LicenseRef-BSD-3-Clause-Sandia-NVIDIA-USGov
+PackageLicenseDeclared: BSD-3-Clause
+PackageLicenseInfoFromFiles: BSD-3-Clause
+PackageLicenseInfoFromFiles: LicenseRef-BSD-3-Clause-Sandia-NVIDIA-USGov
+PackageCopyrightText: <text>
+Copyright (c) Kitware SAS
+Copyright 2008 Sandia Corporation
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkFiltersTemporal

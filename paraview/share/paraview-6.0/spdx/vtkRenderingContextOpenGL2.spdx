@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkRenderingContextOpenGL2
+DocumentNamespace: https://paraview.org/spdx/vtkRenderingContextOpenGL2
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:36Z
+
+##### Package: vtkRenderingContextOpenGL2
+
+PackageName: vtkRenderingContextOpenGL2
+SPDXID: SPDXRef-Package-vtkRenderingContextOpenGL2
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/Rendering/ContextOpenGL2
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkRenderingContextOpenGL2

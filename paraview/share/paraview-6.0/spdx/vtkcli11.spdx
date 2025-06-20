@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: cli11
+DocumentNamespace: https://paraview.org/spdx/cli11
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:36Z
+
+##### Package: cli11
+
+PackageName: cli11
+SPDXID: SPDXRef-Package-cli11
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/cli11.git@for/vtk-20241208-2.4.2
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2017-2019 University of Cincinnati, developed by Henry Schreiner under NSF AWARD 1414736
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-cli11

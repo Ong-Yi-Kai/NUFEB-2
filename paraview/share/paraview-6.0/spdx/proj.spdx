@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: proj
+DocumentNamespace: https://paraview.org/spdx/proj
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:26Z
+
+##### Package: proj
+
+PackageName: proj
+SPDXID: SPDXRef-Package-proj
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/proj-9.2.1.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright The proj contributors
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-proj

@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: zlib
+DocumentNamespace: https://paraview.org/spdx/zlib
+Creator: Tool: CMake
+Created: 2025-05-21T00:48:51Z
+
+##### Package: zlib
+
+PackageName: zlib
+SPDXID: SPDXRef-Package-zlib
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/zlib-1.3.1.tar.xz
+FilesAnalyzed: False
+PackageLicenseConcluded: Zlib
+PackageLicenseDeclared: Zlib
+PackageCopyrightText: <text>
+(C) 1995-2022 Jean-loup Gailly and Mark Adler
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-zlib

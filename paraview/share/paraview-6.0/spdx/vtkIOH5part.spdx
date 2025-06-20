@@ -1,0 +1,23 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkIOH5part
+DocumentNamespace: https://paraview.org/spdx/vtkIOH5part
+Creator: Tool: CMake
+Created: 2025-05-21T01:02:24Z
+
+##### Package: vtkIOH5part
+
+PackageName: vtkIOH5part
+SPDXID: SPDXRef-Package-vtkIOH5part
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/IO/H5part
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (C) CSCS - Swiss National Supercomputing Centre
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+Copyright (c) Kitware, Inc.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkIOH5part

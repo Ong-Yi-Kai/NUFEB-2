@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: lapack
+DocumentNamespace: https://paraview.org/spdx/lapack
+Creator: Tool: CMake
+Created: 2025-05-21T00:49:40Z
+
+##### Package: lapack
+
+PackageName: lapack
+SPDXID: SPDXRef-Package-lapack
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/lapack-3.11.0.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 1992-2022 The University of Tennessee and The University of Tennessee Research Foundation Copyright (c) 2000-2022 The University of California Berkeley Copyright (c) 2006-2022 The University of Colorado Denver
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-lapack

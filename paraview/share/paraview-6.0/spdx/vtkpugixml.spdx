@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pugixml
+DocumentNamespace: https://paraview.org/spdx/pugixml
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:34Z
+
+##### Package: pugixml
+
+PackageName: pugixml
+SPDXID: SPDXRef-Package-pugixml
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/pugixml.git@for/vtk-20241202-1.14
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright (c) 2006-2020 Arseny Kapoulkine
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pugixml

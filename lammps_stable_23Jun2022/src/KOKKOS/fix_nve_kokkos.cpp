@@ -1,8 +1,7 @@
-// clang-format off
 /* ----------------------------------------------------------------------
    LAMMPS - Large-scale Atomic/Molecular Massively Parallel Simulator
-   https://www.lammps.org/, Sandia National Laboratories
-   LAMMPS development team: developers@lammps.org
+   https://lammps.sandia.gov/, Sandia National Laboratories
+   Steve Plimpton, sjplimp@sandia.gov
 
    Copyright (2003) Sandia Corporation.  Under the terms of Contract
    DE-AC04-94AL85000 with Sandia Corporation, the U.S. Government retains
@@ -34,17 +33,6 @@ FixNVEKokkos<DeviceType>::FixNVEKokkos(LAMMPS *lmp, int narg, char **arg) :
 
   datamask_read = X_MASK | V_MASK | F_MASK | MASK_MASK | RMASS_MASK | TYPE_MASK;
   datamask_modify = X_MASK | V_MASK;
-}
-
-/* ---------------------------------------------------------------------- */
-
-template<class DeviceType>
-void FixNVEKokkos<DeviceType>::init()
-{
-  FixNVE::init();
-
-  atomKK->k_mass.modify<LMPHostType>();
-  atomKK->k_mass.sync<DeviceType>();
 }
 
 /* ----------------------------------------------------------------------
@@ -130,9 +118,6 @@ void FixNVEKokkos<DeviceType>::final_integrate()
     FixNVEKokkosFinalIntegrateFunctor<DeviceType,0> functor(this);
     Kokkos::parallel_for(nlocal,functor);
   }
-
-  // debug
-  //atomKK->sync(Host,datamask_read);
 }
 
 template<class DeviceType>

@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: openvdb
+DocumentNamespace: https://paraview.org/spdx/openvdb
+Creator: Tool: CMake
+Created: 2025-05-21T00:51:49Z
+
+##### Package: openvdb
+
+PackageName: openvdb
+SPDXID: SPDXRef-Package-openvdb
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/openvdb-10.0.1.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: MPL-2.0
+PackageLicenseDeclared: MPL-2.0
+PackageCopyrightText: <text>
+Copyright Contributors to the OpenVDB project
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-openvdb

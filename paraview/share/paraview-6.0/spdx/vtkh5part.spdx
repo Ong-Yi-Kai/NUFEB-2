@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: h5part
+DocumentNamespace: https://paraview.org/spdx/h5part
+Creator: Tool: CMake
+Created: 2025-05-21T01:02:24Z
+
+##### Package: h5part
+
+PackageName: h5part
+SPDXID: SPDXRef-Package-h5part
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/h5part.git@for/vtk-20220119-1.6.6
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2006-2009, The Regents of the University of California, through Lawrence Berkeley National Laboratory (subject to receipt of any;required approvals from the U.S. Dept. of Energy) and the Paul Scherrer Institut (Switzerland).
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-h5part

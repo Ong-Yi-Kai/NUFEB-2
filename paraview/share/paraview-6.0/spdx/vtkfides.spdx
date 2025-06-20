@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: fides
+DocumentNamespace: https://paraview.org/spdx/fides
+Creator: Tool: CMake
+Created: 2025-05-21T01:09:41Z
+
+##### Package: fides
+
+PackageName: fides
+SPDXID: SPDXRef-Package-fides
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/fides.git@for/vtk-20230505-master-6922a48e
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2019 Kitware Inc.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-fides

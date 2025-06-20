@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: ospray
+DocumentNamespace: https://paraview.org/spdx/ospray
+Creator: Tool: CMake
+Created: 2025-05-21T00:59:38Z
+
+##### Package: ospray
+
+PackageName: ospray
+SPDXID: SPDXRef-Package-ospray
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/ospray-v2.7.1.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: Apache-2.0
+PackageLicenseDeclared: Apache-2.0
+PackageCopyrightText: <text>
+Copyright (c) Intel Corporation
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-ospray

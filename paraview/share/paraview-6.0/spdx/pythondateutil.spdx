@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pythondateutil
+DocumentNamespace: https://paraview.org/spdx/pythondateutil
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:12Z
+
+##### Package: pythondateutil
+
+PackageName: pythondateutil
+SPDXID: SPDXRef-Package-pythondateutil
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/python-dateutil-2.8.2.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: Apache-2.0 AND BSD-3-Clause
+PackageLicenseDeclared: Apache-2.0 AND BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright 2017- Paul Ganssle Copyright 2017- dateutil contributors Copyright (c) 2003-2011 - Gustavo Niemeyer Copyright (c) 2012-2014 - Tomi Pieviläinen Copyright (c) 2014-2016 - Yaron de Leeuw Copyright (c) 2015-     - Paul Ganssle Copyright (c) 2015-     - dateutil contributors
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pythondateutil

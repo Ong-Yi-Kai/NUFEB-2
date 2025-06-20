@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkDICOMParser
+DocumentNamespace: https://paraview.org/spdx/vtkDICOMParser
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:34Z
+
+##### Package: vtkDICOMParser
+
+PackageName: vtkDICOMParser
+SPDXID: SPDXRef-Package-vtkDICOMParser
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/Utilities/DICOMParser
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-4-Clause
+PackageLicenseDeclared: BSD-4-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2003 Matt Turek
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkDICOMParser

@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: sympy
+DocumentNamespace: https://paraview.org/spdx/sympy
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:24Z
+
+##### Package: sympy
+
+PackageName: sympy
+SPDXID: SPDXRef-Package-sympy
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/sympy-1.12.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2006-2023 SymPy Development Team Copyright (c) 2006-2018 SymPy Development Team, 2013-2023 Sergey B Kirpichev Copyright (c) 2014 Matthew Rocklin Copyright (c) 2009-2023, PyDy Authors Copyright 2016, latex2sympy
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-sympy

@@ -1,0 +1,24 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkCDIReader
+DocumentNamespace: https://paraview.org/spdx/vtkCDIReader
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:34Z
+
+##### Package: vtkCDIReader
+
+PackageName: vtkCDIReader
+SPDXID: SPDXRef-Package-vtkCDIReader
+PackageDownloadLocation: https://gitlab.kitware.com/paraview/paraview/-/tree/master/Plugins/CDIReader/Reader
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Kitware Inc. Copyright (c) 2018 Niklas Roeber, DKRZ Hamburg
+Copyright (c) 2018 Niklas Roeber, DKRZ Hamburg
+Copyright (c) Kitware Inc.
+Copyright (c) Sandia Corporation
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkCDIReader

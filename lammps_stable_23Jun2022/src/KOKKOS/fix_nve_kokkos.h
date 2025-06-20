@@ -1,7 +1,7 @@
 /* -*- c++ -*- ----------------------------------------------------------
    LAMMPS - Large-scale Atomic/Molecular Massively Parallel Simulator
-   https://www.lammps.org/, Sandia National Laboratories
-   LAMMPS development team: developers@lammps.org
+   http://lammps.sandia.gov, Sandia National Laboratories
+   Steve Plimpton, sjplimp@sandia.gov
 
    Copyright (2003) Sandia Corporation.  Under the terms of Contract
    DE-AC04-94AL85000 with Sandia Corporation, the U.S. Government retains
@@ -12,14 +12,13 @@
 ------------------------------------------------------------------------- */
 
 #ifdef FIX_CLASS
-// clang-format off
-FixStyle(nve/kk,FixNVEKokkos<LMPDeviceType>);
-FixStyle(nve/kk/device,FixNVEKokkos<LMPDeviceType>);
-FixStyle(nve/kk/host,FixNVEKokkos<LMPHostType>);
-// clang-format on
+
+FixStyle(nve/kk,FixNVEKokkos<LMPDeviceType>)
+FixStyle(nve/kk/device,FixNVEKokkos<LMPDeviceType>)
+FixStyle(nve/kk/host,FixNVEKokkos<LMPHostType>)
+
 #else
 
-// clang-format off
 #ifndef LMP_FIX_NVE_KOKKOS_H
 #define LMP_FIX_NVE_KOKKOS_H
 
@@ -41,11 +40,10 @@ template<class DeviceType>
 class FixNVEKokkos : public FixNVE {
  public:
   FixNVEKokkos(class LAMMPS *, int, char **);
-
+  ~FixNVEKokkos() {}
   void cleanup_copy();
-  void init() override;
-  void initial_integrate(int) override;
-  void final_integrate() override;
+  void initial_integrate(int);
+  void final_integrate();
 
   KOKKOS_INLINE_FUNCTION
   void initial_integrate_item(int) const;
@@ -57,8 +55,6 @@ class FixNVEKokkos : public FixNVE {
   void final_integrate_rmass_item(int) const;
 
  private:
-
-
   typename ArrayTypes<DeviceType>::t_x_array x;
   typename ArrayTypes<DeviceType>::t_v_array v;
   typename ArrayTypes<DeviceType>::t_f_array_const f;
@@ -101,3 +97,12 @@ struct FixNVEKokkosFinalIntegrateFunctor  {
 #endif
 #endif
 
+/* ERROR/WARNING messages:
+
+E: Illegal ... command
+
+Self-explanatory.  Check the input script syntax and compare to the
+documentation for the command.  You can use -echo screen as a
+command-line option when running LAMMPS to see the offending line.
+
+*/

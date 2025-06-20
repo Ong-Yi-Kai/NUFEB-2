@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pytz
+DocumentNamespace: https://paraview.org/spdx/pytz
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:10Z
+
+##### Package: pytz
+
+PackageName: pytz
+SPDXID: SPDXRef-Package-pytz
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/pytz-2023.3.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright (c) 2003-2019 Stuart Bishop
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pytz

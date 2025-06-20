@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model>
+    <listOfFunctionDefinitions>
+      <functionDefinition id="f">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> x </ci>
+            </bvar>
+            <bvar>
+              <ci> y </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> x </ci>
+              <ci> y </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="g">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> x </ci>
+            </bvar>
+            <bvar>
+              <ci> y </ci>
+            </bvar>
+            <apply>
+              <ci> f </ci>
+              <ci> x </ci>
+              <ci> y </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="f_relabelled">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> p </ci>
+            </bvar>
+            <bvar>
+              <ci> S1 </ci>
+            </bvar>
+            <apply>
+              <minus/>
+              <ci> p </ci>
+              <ci> S1 </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+    </listOfFunctionDefinitions>
+    <listOfCompartments>
+      <compartment id="compartmentOne" size="1"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="S1" compartment="compartmentOne" initialConcentration="1"/>
+      <species id="S2" compartment="compartmentOne" initialConcentration="0"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="t" value="1" units="second"/>
+      <parameter id="p" value="1" units="dimensionless"/>
+      <parameter id="p_target" value="1" />
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="p_target">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <apply>
+                <ci> f_relabelled </ci>
+                <ci> S1 </ci>
+                <ci> p </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+            <ci> t </ci>
+          </apply>
+        </math>
+      </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfReactions>
+      <reaction id="reaction_1" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="S1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="S2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <ci> g </ci>
+                <apply>
+                  <ci> f </ci>
+                  <ci> S1 </ci>
+                  <ci> p </ci>
+                </apply>
+                <ci> compartmentOne </ci>
+              </apply>
+              <ci> t </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="reaction_2" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="S1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="S2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <ci> f </ci>
+                <apply>
+                  <ci> f </ci>
+                  <ci> S1 </ci>
+                  <ci> p </ci>
+                </apply>
+                <ci> compartmentOne </ci>
+              </apply>
+              <ci> t </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="reaction_3" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="S1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="S2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <ci> f </ci>
+                  <ci> S1 </ci>
+                  <ci> p </ci>
+                </apply>
+                <ci> compartmentOne </ci>
+              </apply>
+              <ci> t </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <!-- <reaction id="reaction_3_using_f_relabelled" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="S1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="S2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <ci> f_relabelled </ci>
+                  <ci> S1 </ci>
+                  <ci> p </ci>
+                </apply>
+                <ci> compartmentOne </ci>
+              </apply>
+              <ci> t </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction> -->
+    </listOfReactions>
+  </model>
+</sbml>

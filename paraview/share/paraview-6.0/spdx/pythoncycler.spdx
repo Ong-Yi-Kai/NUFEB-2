@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pythoncycler
+DocumentNamespace: https://paraview.org/spdx/pythoncycler
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:10Z
+
+##### Package: pythoncycler
+
+PackageName: pythoncycler
+SPDXID: SPDXRef-Package-pythoncycler
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/cycler-0.11.0.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2015, matplotlib project
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pythoncycler

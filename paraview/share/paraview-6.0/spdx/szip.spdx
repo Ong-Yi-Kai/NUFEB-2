@@ -1,0 +1,52 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: szip
+DocumentNamespace: https://paraview.org/spdx/szip
+Creator: Tool: CMake
+Created: 2025-05-21T00:50:40Z
+
+##### Package: szip
+
+PackageName: szip
+SPDXID: SPDXRef-Package-szip
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/szip-2.1.1.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: LicenseRef-SZIP
+PackageLicenseDeclared: LicenseRef-SZIP
+PackageCopyrightText: <text>
+Copyright (C) 2001 Science & Technology Corporation @ UNM Copyright (C) 2003 Lowell H. Miles and Jack A. Venbrux
+</text>
+
+LicenseID: LicenseRef-SZIP
+ExtractedText: <text>
+SZIP Copyright and License Notice
+
+The SZIP Science Data Lossless Compression Program is Copyright (C) 2001 
+Science & Technology Corporation @ UNM.  All rights released.  
+
+Copyright (C) 2003-2005 Lowell H. Miles and Jack A. Venbrux.  
+Licensed to ICs, LLC, for distribution by the University of Illinois' 
+National Center for Supercomputing Applications as a part of the 
+HDF data storage and retrieval file format and software library
+products package.  All rights reserved.  Do not modify or use for other
+purposes.
+
+SZIP implements an extended Rice adaptive lossless compression algorithm
+for sample data.  The primary algorithm was developed by R. F. Rice at
+Jet Propulsion Laboratory.  
+
+SZIP embodies certain inventions patented by the National Aeronautics &
+Space Administration.  United States Patent Nos. 5,448,642, 5,687,255,
+and 5,822,457 have been licensed to ICs, LLC, for distribution with the
+HDF data storage and retrieval file format and software library products.
+All rights reserved.
+
+Revocable (in the event of breach by the user or if required by law), 
+royalty-free, nonexclusive sublicense to use SZIP decompression software 
+routines and underlying patents is hereby granted by ICs, LLC, to all users 
+of and in conjunction with HDF data storage and retrieval file format and 
+software library products.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-szip

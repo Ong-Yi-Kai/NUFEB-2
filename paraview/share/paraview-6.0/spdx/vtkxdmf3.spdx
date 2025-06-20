@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: xdmf3
+DocumentNamespace: https://paraview.org/spdx/xdmf3
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:36Z
+
+##### Package: xdmf3
+
+PackageName: xdmf3
+SPDXID: SPDXRef-Package-xdmf3
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/xdmf.git@for/vtk-20210822-master-gfe7dd1ca
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-4-Clause
+PackageLicenseDeclared: BSD-4-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2011 U.S. Army Research Laboratory
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-xdmf3

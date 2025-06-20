@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: genericio
+DocumentNamespace: https://paraview.org/spdx/genericio
+Creator: Tool: CMake
+Created: 2025-05-21T00:58:35Z
+
+##### Package: genericio
+
+PackageName: genericio
+SPDXID: SPDXRef-Package-genericio
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/genericio-master-4fddf723bca61c87f51dba1d9f215dfdd6e5b31d.tar.xz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (C) 2015, UChicago Argonne, LLC
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-genericio

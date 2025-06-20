@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: openpmd
+DocumentNamespace: https://paraview.org/spdx/openpmd
+Creator: Tool: CMake
+Created: 2025-05-21T00:59:27Z
+
+##### Package: openpmd
+
+PackageName: openpmd
+SPDXID: SPDXRef-Package-openpmd
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/openPMD-api-0.15.2.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: LGPL-3.0-or-later AND MIT AND BSD-3-Clause
+PackageLicenseDeclared: LGPL-3.0-or-later AND MIT AND BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright Axel Huebl, Franz Poeschel, Fabian Koller, Junmin Gu Copyright (c) 2013-2020 Niels Lohmann Copyright (c) 2016 Wenzel Jakob
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-openpmd

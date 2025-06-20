@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: theora
+DocumentNamespace: https://paraview.org/spdx/theora
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:36Z
+
+##### Package: theora
+
+PackageName: theora
+SPDXID: SPDXRef-Package-theora
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/theora.git@for/vtk-20220517-1.1.1
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (C) 2002-2009 Xiph.org Foundation
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-theora

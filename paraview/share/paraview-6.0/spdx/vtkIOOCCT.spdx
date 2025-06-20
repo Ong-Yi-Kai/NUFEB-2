@@ -1,0 +1,24 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkIOOCCT
+DocumentNamespace: https://paraview.org/spdx/vtkIOOCCT
+Creator: Tool: CMake
+Created: 2025-05-21T01:02:24Z
+
+##### Package: vtkIOOCCT
+
+PackageName: vtkIOOCCT
+SPDXID: SPDXRef-Package-vtkIOOCCT
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/IO/OCCT
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright 2021-2022 Michael Migliore, Mathieu Westphal
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen Copyright 2019-2021 Kitware SAS Copyright 2021-2022 Michael Migliore, Mathieu Westphal
+Copyright 2019-2021 Kitware SAS
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkIOOCCT

@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: gl2ps
+DocumentNamespace: https://paraview.org/spdx/gl2ps
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:34Z
+
+##### Package: gl2ps
+
+PackageName: gl2ps
+SPDXID: SPDXRef-Package-gl2ps
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/gl2ps.git@for/vtk-20200930-1.4.2
+FilesAnalyzed: False
+PackageLicenseConcluded: GL2PS
+PackageLicenseDeclared: GL2PS
+PackageCopyrightText: <text>
+Copyright (C) 2003, Christophe Geuzaine
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-gl2ps

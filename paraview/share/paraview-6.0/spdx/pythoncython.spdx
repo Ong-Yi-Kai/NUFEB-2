@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pythoncython
+DocumentNamespace: https://paraview.org/spdx/pythoncython
+Creator: Tool: CMake
+Created: 2025-05-21T00:54:03Z
+
+##### Package: pythoncython
+
+PackageName: pythoncython
+SPDXID: SPDXRef-Package-pythoncython
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/cython-3.0.11.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: Apache-2.0
+PackageLicenseDeclared: Apache-2.0
+PackageCopyrightText: <text>
+Copyright Stefan Behnel, Robert Bradshaw, Dag Sverre Seljebotn, Greg Ewing, William Stein, Gabriel Gellner, et al.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pythoncython

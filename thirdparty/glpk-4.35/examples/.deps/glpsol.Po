@@ -1,0 +1,3 @@
+glpsol.o: glpsol.c /usr/include/stdc-predef.h ../include/glpk.h
+/usr/include/stdc-predef.h:
+../include/glpk.h:

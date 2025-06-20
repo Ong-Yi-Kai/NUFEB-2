@@ -1,0 +1,24 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkRenderingVolumeOpenGL2
+DocumentNamespace: https://paraview.org/spdx/vtkRenderingVolumeOpenGL2
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:36Z
+
+##### Package: vtkRenderingVolumeOpenGL2
+
+PackageName: vtkRenderingVolumeOpenGL2
+SPDXID: SPDXRef-Package-vtkRenderingVolumeOpenGL2
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/Rendering/VolumeOpenGL2
+FilesAnalyzed: True
+PackageLicenseConcluded: LicenseRef-BSD-3-Clause-Sandia-USGov AND BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageLicenseInfoFromFiles: LicenseRef-BSD-3-Clause-Sandia-USGov
+PackageLicenseInfoFromFiles: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+Copyright 2003 Sandia Corporation
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkRenderingVolumeOpenGL2

@@ -21,6 +21,7 @@
 #include "modify.h"
 
 #include <cstring>
+#include <iostream>
 
 using namespace LAMMPS_NS;
 using namespace MathConst;

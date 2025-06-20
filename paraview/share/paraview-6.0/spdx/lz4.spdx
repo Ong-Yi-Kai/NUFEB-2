@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: lz4
+DocumentNamespace: https://paraview.org/spdx/lz4
+Creator: Tool: CMake
+Created: 2025-05-21T00:48:51Z
+
+##### Package: lz4
+
+PackageName: lz4
+SPDXID: SPDXRef-Package-lz4
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/lz4-1.9.4.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-2-Clause
+PackageLicenseDeclared: BSD-2-Clause
+PackageCopyrightText: <text>
+Copyright (C) 2013-2020, Yann Collet
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-lz4

@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: cdi
+DocumentNamespace: https://paraview.org/spdx/cdi
+Creator: Tool: CMake
+Created: 2025-05-21T00:59:29Z
+
+##### Package: cdi
+
+PackageName: cdi
+SPDXID: SPDXRef-Package-cdi
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/cdi-2.5.1.1.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright 2002-2023, MPI für Meteorologie
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-cdi

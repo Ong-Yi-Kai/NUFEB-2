@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pythontzdata
+DocumentNamespace: https://paraview.org/spdx/pythontzdata
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:11Z
+
+##### Package: pythontzdata
+
+PackageName: pythontzdata
+SPDXID: SPDXRef-Package-pythontzdata
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/tzdata-2023.3.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: Apache-2.0
+PackageLicenseDeclared: Apache-2.0
+PackageCopyrightText: <text>
+Copyright (c) 2020, Paul Ganssle (Google)
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pythontzdata

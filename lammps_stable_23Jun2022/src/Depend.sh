@@ -190,3 +190,10 @@ if (test $1 = "REAXFF") then
   depend KOKKOS
   depend OPENMP
 fi
+
+# if (test $1 = "NUFEB") then
+#   depend KOKKOS
+#   depend PLASMID
+#   depend HDF5
+#   depend VTK
+# fi

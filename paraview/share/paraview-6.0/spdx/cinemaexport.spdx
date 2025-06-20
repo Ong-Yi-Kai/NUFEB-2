@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: cinemaexport
+DocumentNamespace: https://paraview.org/spdx/cinemaexport
+Creator: Tool: CMake
+Created: 2025-05-21T01:21:47Z
+
+##### Package: cinemaexport
+
+PackageName: cinemaexport
+SPDXID: SPDXRef-Package-cinemaexport
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/cinema-paraview-plugin-f6de62859beb7e0cd75ba07e5e8ddf3a906e387a.zip
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause-LANL-USGov
+PackageLicenseDeclared: BSD-3-Clause-LANL-USGov
+PackageCopyrightText: <text>
+Copyright ( c ) 2024, Triad National Security, LLC
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-cinemaexport

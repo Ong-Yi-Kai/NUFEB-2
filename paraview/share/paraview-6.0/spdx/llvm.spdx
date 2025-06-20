@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: llvm
+DocumentNamespace: https://paraview.org/spdx/llvm
+Creator: Tool: CMake
+Created: 2025-05-21T00:54:27Z
+
+##### Package: llvm
+
+PackageName: llvm
+SPDXID: SPDXRef-Package-llvm
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/llvm-7.0.0.src.tar.xz
+FilesAnalyzed: False
+PackageLicenseConcluded: Spencer-94 AND BSD-3-Clause AND MIT
+PackageLicenseDeclared: Spencer-94 AND BSD-3-Clause AND MIT
+PackageCopyrightText: <text>
+Copyright (c) 2003-2019 University of Illinois at Urbana-Champaig Copyright 1992, 1993, 1994 Henry Spencer Copyright (c) 1994 The Regents of the University of California Copyright (c) 2006 Kirill Simonov
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-llvm

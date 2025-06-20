@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkContourLabelPlugin
+DocumentNamespace: https://paraview.org/spdx/vtkContourLabelPlugin
+Creator: Tool: CMake
+Created: 2025-05-21T01:18:25Z
+
+##### Package: vtkContourLabelPlugin
+
+PackageName: vtkContourLabelPlugin
+SPDXID: SPDXRef-Package-vtkContourLabelPlugin
+PackageDownloadLocation: https://gitlab.kitware.com/paraview/paraview/-/tree/master/Plugins/ContourLabelPlugin/Representations
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Kitware Inc.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkContourLabelPlugin

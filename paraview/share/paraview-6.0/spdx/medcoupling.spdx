@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: medcoupling
+DocumentNamespace: https://paraview.org/spdx/medcoupling
+Creator: Tool: CMake
+Created: 2025-05-21T00:59:29Z
+
+##### Package: medcoupling
+
+PackageName: medcoupling
+SPDXID: SPDXRef-Package-medcoupling
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/medcoupling-06f4a5b.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: LGPL-2.1-or-later
+PackageLicenseDeclared: LGPL-2.1-or-later
+PackageCopyrightText: <text>
+Copyright (C) CEA/DEN, EDF R&D
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-medcoupling

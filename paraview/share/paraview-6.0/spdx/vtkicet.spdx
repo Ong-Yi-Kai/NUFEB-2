@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: icet
+DocumentNamespace: https://paraview.org/spdx/icet
+Creator: Tool: CMake
+Created: 2025-05-21T01:11:18Z
+
+##### Package: icet
+
+PackageName: icet
+SPDXID: SPDXRef-Package-icet
+PackageDownloadLocation: git+https://gitlab.kitware.com/paraview/icet.git@32816fe5592de3be664da6f8466a546f221d8532
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2003-2022 Sandia Coporation
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-icet

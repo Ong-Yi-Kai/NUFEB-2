@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: metaio
+DocumentNamespace: https://paraview.org/spdx/metaio
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:35Z
+
+##### Package: metaio
+
+PackageName: metaio
+SPDXID: SPDXRef-Package-metaio
+PackageDownloadLocation: git+https://github.com/Kitware/MetaIO.git@ea2bb780
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause AND BSD-4-Clause
+PackageLicenseDeclared: BSD-3-Clause AND BSD-4-Clause
+PackageCopyrightText: <text>
+Copyright 2000-2014 Insight Software Consortium;Copyright (c) 1999-2007 Insight Software Consortium
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-metaio

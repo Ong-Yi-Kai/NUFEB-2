@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkPVAdaptorsCTH
+DocumentNamespace: https://paraview.org/spdx/vtkPVAdaptorsCTH
+Creator: Tool: CMake
+Created: 2025-05-21T01:18:13Z
+
+##### Package: vtkPVAdaptorsCTH
+
+PackageName: vtkPVAdaptorsCTH
+SPDXID: SPDXRef-Package-vtkPVAdaptorsCTH
+PackageDownloadLocation: https://gitlab.kitware.com/paraview/paraview/-/tree/master/Adaptors/CTH
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Kitware Inc.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkPVAdaptorsCTH

@@ -1,0 +1,39 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkAnalyzeNIfTIIO
+DocumentNamespace: https://paraview.org/spdx/vtkAnalyzeNIfTIIO
+Creator: Tool: CMake
+Created: 2025-05-21T01:18:14Z
+
+##### Package: vtkAnalyzeNIfTIIO
+
+PackageName: vtkAnalyzeNIfTIIO
+SPDXID: SPDXRef-Package-vtkAnalyzeNIfTIIO
+PackageDownloadLocation: https://gitlab.kitware.com/paraview/paraview/-/tree/master/Plugins/AnalyzeNIfTIReaderWriter/NIfTIIO
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause AND LicenseRef-PublicDomain-nifti AND BSD-3-Clause AND LicenseRef-PublicDomain-nifti 
+PackageLicenseDeclared: BSD-3-Clause AND LicenseRef-PublicDomain-nifti
+PackageLicenseInfoFromFiles: BSD-3-Clause AND LicenseRef-PublicDomain-nifti
+PackageLicenseInfoFromFiles: BSD-3-Clause
+PackageLicenseInfoFromFiles: LicenseRef-PublicDomain-nifti 
+PackageCopyrightText: <text>
+Copyright (c) Kitware Inc.
+Copyright (c) Kitware Inc. Copyright (c) Joseph Hennessey
+Copyright (c) Joseph Hennessey
+NONE
+</text>
+
+LicenseID: LicenseRef-PublicDomain-nifti
+ExtractedText: <text>Niftilib has been developed by members of the NIFTI DFWG and volunteers in the
+neuroimaging community and serves as a reference implementation of the nifti-1
+file format.
+
+http://nifti.nimh.nih.gov/
+
+Nifticlib code is released into the public domain, developers are encouraged to
+incorporate niftilib code into their applications, and, to contribute changes
+and enhancements to niftilib.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkAnalyzeNIfTIIO

@@ -19,14 +19,19 @@
 
 #ifdef LMP_KOKKOS
 
-#include "atom_kokkos.h"          // IWYU pragma: export
-#include "comm_kokkos.h"          // IWYU pragma: export
-#include "comm_tiled_kokkos.h"    // IWYU pragma: export
-#include "domain_kokkos.h"        // IWYU pragma: export
-#include "kokkos.h"               // IWYU pragma: export
-#include "memory_kokkos.h"        // IWYU pragma: export
-#include "modify_kokkos.h"        // IWYU pragma: export
-#include "neighbor_kokkos.h"      // IWYU pragma: export
+#include "kokkos.h"              // IWYU pragma: export
+#include "atom_kokkos.h"         // IWYU pragma: export
+#include "comm_kokkos.h"         // IWYU pragma: export
+#include "comm_tiled_kokkos.h"   // IWYU pragma: export
+#include "domain_kokkos.h"       // IWYU pragma: export
+#include "neighbor_kokkos.h"     // IWYU pragma: export
+#include "memory_kokkos.h"       // IWYU pragma: export
+#include "modify_kokkos.h"       // IWYU pragma: export
+
+// NUFEB specific
+
+#include "comm_grid_kokkos.h"
+#include "grid_kokkos.h"
 
 #define LAMMPS_INLINE KOKKOS_INLINE_FUNCTION
 
@@ -37,11 +42,13 @@
 
 #include "atom.h"
 #include "comm_brick.h"
+#include "comm_grid.h"
 #include "comm_tiled.h"
 #include "domain.h"
+#include "neighbor.h"
 #include "memory.h"
 #include "modify.h"
-#include "neighbor.h"
+#include "grid.h"
 
 #define LAMMPS_INLINE inline
 
@@ -110,7 +117,20 @@ class DAT {
   typedef int tdual_int_2d;
 };
 
-}    // namespace LAMMPS_NS
+// NUFEB specific
+
+class GridKokkos : public Grid {
+ public:
+  GridKokkos(class LAMMPS *lmp) : Grid(lmp) {}
+  ~GridKokkos() {}
+};
+
+class CommGridKokkos : public CommGrid {
+ public:
+  CommGridKokkos(class LAMMPS *lmp) : CommGrid(lmp) {}
+  ~CommGridKokkos() {}
+};
+} // namespace LAMMPS_NS
 
 #endif
 #endif

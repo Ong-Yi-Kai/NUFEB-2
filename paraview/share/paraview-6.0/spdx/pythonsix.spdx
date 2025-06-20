@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pythonsix
+DocumentNamespace: https://paraview.org/spdx/pythonsix
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:09Z
+
+##### Package: pythonsix
+
+PackageName: pythonsix
+SPDXID: SPDXRef-Package-pythonsix
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/six-1.16.0.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright (c) 2010-2020 Benjamin Peterson
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pythonsix

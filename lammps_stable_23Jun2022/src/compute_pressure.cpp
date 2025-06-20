@@ -1,4 +1,3 @@
-// clang-format off
 /* ----------------------------------------------------------------------
    LAMMPS - Large-scale Atomic/Molecular Massively Parallel Simulator
    https://www.lammps.org/, Sandia National Laboratories
@@ -21,6 +20,8 @@
 #include "domain.h"
 #include "error.h"
 #include "fix.h"
+#include "input.h"
+#include "variable.h"
 #include "force.h"
 #include "improper.h"
 #include "kspace.h"
@@ -32,6 +33,8 @@
 #include <cctype>
 #include <cstring>
 using namespace LAMMPS_NS;
+
+enum{BOX=0,CONSTANT,VARIABLE};
 
 /* ---------------------------------------------------------------------- */
 
@@ -49,6 +52,11 @@ ComputePressure::ComputePressure(LAMMPS *lmp, int narg, char **arg) :
   pressflag = 1;
   timeflag = 1;
 
+  vol_style = BOX;
+  vol = 1.0;
+  vol_index = -1;
+  vol_str = nullptr;
+  
   // store temperature ID used by pressure computation
   // insure it is valid for temperature computation
 
@@ -121,6 +129,17 @@ ComputePressure::ComputePressure(LAMMPS *lmp, int narg, char **arg) :
         pairflag = 1;
         bondflag = angleflag = dihedralflag = improperflag = 1;
         kspaceflag = fixflag = 1;
+      } else if (strcmp(arg[iarg], "vol") == 0) {
+      if (strstr(arg[iarg+1], "v_") == arg[iarg+1]) {
+        int n = strlen(&arg[iarg+1][2]) + 1;
+        vol_str = new char[n];
+        strcpy(vol_str, &arg[iarg+1][2]);
+        vol_style = VARIABLE;
+      } else {
+        vol = utils::inumeric(FLERR,arg[iarg+1],false,lmp);
+        vol_style = CONSTANT;
+      }
+      iarg++;
       } else error->all(FLERR,"Illegal compute pressure command");
       iarg++;
     }
@@ -145,6 +164,7 @@ ComputePressure::~ComputePressure()
   delete [] vector;
   delete [] vptr;
   delete [] pstyle;
+  delete [] vol_str;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -223,6 +243,14 @@ void ComputePressure::init()
 
   if (kspaceflag && force->kspace) kspace_virial = force->kspace->virial;
   else kspace_virial = nullptr;
+
+  // find volume variable
+
+  if (vol_style == VARIABLE) {
+    vol_index = input->variable->find(vol_str);
+    if (vol_index < 0)
+      error->all(FLERR,"Variable name for fix pressure does not exist");
+  }
 }
 
 /* ----------------------------------------------------------------------
@@ -237,24 +265,34 @@ double ComputePressure::compute_scalar()
 
   // invoke temperature if it hasn't been already
 
+  double t;
   if (keflag) {
     if (temperature->invoked_scalar != update->ntimestep)
-      temperature->compute_scalar();
+      t = temperature->compute_scalar();
+    else t = temperature->scalar;
+  }
+
+  if (vol_style == CONSTANT)
+    inv_volume = 1.0 / vol;
+  else if (vol_style == VARIABLE) {
+    inv_volume = 1.0 / input->variable->compute_equal(vol_index);
   }
 
   if (dimension == 3) {
-    inv_volume = 1.0 / (domain->xprd * domain->yprd * domain->zprd);
+    if (vol_style == BOX)
+      inv_volume = 1.0 / (domain->xprd * domain->yprd * domain->zprd);
     virial_compute(3,3);
     if (keflag)
-      scalar = (temperature->dof * boltz * temperature->scalar +
+      scalar = (temperature->dof * boltz * t +
                 virial[0] + virial[1] + virial[2]) / 3.0 * inv_volume * nktv2p;
     else
       scalar = (virial[0] + virial[1] + virial[2]) / 3.0 * inv_volume * nktv2p;
   } else {
-    inv_volume = 1.0 / (domain->xprd * domain->yprd);
+    if (vol_style == BOX)
+      inv_volume = 1.0 / (domain->xprd * domain->yprd);
     virial_compute(2,2);
     if (keflag)
-      scalar = (temperature->dof * boltz * temperature->scalar +
+      scalar = (temperature->dof * boltz * t +
                 virial[0] + virial[1]) / 2.0 * inv_volume * nktv2p;
     else
       scalar = (virial[0] + virial[1]) / 2.0 * inv_volume * nktv2p;
@@ -287,8 +325,15 @@ void ComputePressure::compute_vector()
     ke_tensor = temperature->vector;
   }
 
+  if (vol_style == CONSTANT)
+    inv_volume = 1.0 / vol;
+  else if (vol_style == VARIABLE) {
+    inv_volume = 1.0 / input->variable->compute_equal(vol_index);
+  }
+
   if (dimension == 3) {
-    inv_volume = 1.0 / (domain->xprd * domain->yprd * domain->zprd);
+    if (vol_style == BOX)
+      inv_volume = 1.0 / (domain->xprd * domain->yprd * domain->zprd);
     virial_compute(6,3);
     if (keflag) {
       for (int i = 0; i < 6; i++)
@@ -297,7 +342,8 @@ void ComputePressure::compute_vector()
       for (int i = 0; i < 6; i++)
         vector[i] = virial[i] * inv_volume * nktv2p;
   } else {
-    inv_volume = 1.0 / (domain->xprd * domain->yprd);
+    if (vol_style == BOX)
+      inv_volume = 1.0 / (domain->xprd * domain->yprd);
     virial_compute(4,2);
     if (keflag) {
       vector[0] = (ke_tensor[0] + virial[0]) * inv_volume * nktv2p;

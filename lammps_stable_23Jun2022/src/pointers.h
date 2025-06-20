@@ -90,7 +90,11 @@ class Pointers {
     logfile(ptr->logfile),
     atomKK(ptr->atomKK),
     memoryKK(ptr->memoryKK),
-    python(ptr->python) {}
+    python(ptr->python),
+    // NUFEB specific
+    grid(ptr->grid),
+    comm_grid(ptr->comm_grid),
+    gridKK(ptr->gridKK) {}
   virtual ~Pointers() = default;
 
   // remove default members execept for the copy constructor
@@ -127,6 +131,13 @@ class Pointers {
   class AtomKokkos *&atomKK;
   class MemoryKokkos *&memoryKK;
   class Python *&python;
+
+  // NUFEB specific
+
+  Grid *&grid;
+  CommGrid *&comm_grid;
+
+  class GridKokkos *&gridKK;
 };
 
 }

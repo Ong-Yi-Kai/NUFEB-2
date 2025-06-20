@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: libjpegturbo
+DocumentNamespace: https://paraview.org/spdx/libjpegturbo
+Creator: Tool: CMake
+Created: 2025-05-21T00:49:07Z
+
+##### Package: libjpegturbo
+
+PackageName: libjpegturbo
+SPDXID: SPDXRef-Package-libjpegturbo
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/libjpeg-turbo-3.0.0.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: IJG AND BSD-3-Clause AND Zlib
+PackageLicenseDeclared: IJG AND BSD-3-Clause AND Zlib
+PackageCopyrightText: <text>
+Copyright (C)2009-2023 D. R. Commander Copyright (C)2015 Viktor Szathmáry
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-libjpegturbo

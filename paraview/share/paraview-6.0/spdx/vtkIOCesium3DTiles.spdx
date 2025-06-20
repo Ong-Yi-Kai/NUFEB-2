@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkIOCesium3DTiles
+DocumentNamespace: https://paraview.org/spdx/vtkIOCesium3DTiles
+Creator: Tool: CMake
+Created: 2025-05-21T01:09:48Z
+
+##### Package: vtkIOCesium3DTiles
+
+PackageName: vtkIOCesium3DTiles
+SPDXID: SPDXRef-Package-vtkIOCesium3DTiles
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/IO/Cesium3DTiles
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkIOCesium3DTiles

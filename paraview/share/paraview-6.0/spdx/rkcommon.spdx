@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: rkcommon
+DocumentNamespace: https://paraview.org/spdx/rkcommon
+Creator: Tool: CMake
+Created: 2025-05-21T00:49:23Z
+
+##### Package: rkcommon
+
+PackageName: rkcommon
+SPDXID: SPDXRef-Package-rkcommon
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/rkcommon-v1.7.0.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: Apache-2.0
+PackageLicenseDeclared: Apache-2.0
+PackageCopyrightText: <text>
+Copyright Intel Corporation
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-rkcommon

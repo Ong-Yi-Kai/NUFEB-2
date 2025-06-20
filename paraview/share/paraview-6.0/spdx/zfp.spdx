@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: zfp
+DocumentNamespace: https://paraview.org/spdx/zfp
+Creator: Tool: CMake
+Created: 2025-05-21T00:48:50Z
+
+##### Package: zfp
+
+PackageName: zfp
+SPDXID: SPDXRef-Package-zfp
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/zfp-1.0.0.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2014-2022, Lawrence Livermore National Security, LLC
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-zfp

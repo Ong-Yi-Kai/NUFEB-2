@@ -78,6 +78,14 @@ class LAMMPS {
   static const char *git_branch();
   static const char *git_descriptor();
 
+  // NUFEB specific
+
+  class Grid *grid;
+  class CommGrid *comm_grid;
+
+  class GridKokkos *gridKK;
+  class CommGridKokkos *comm_gridKK;
+
   LAMMPS(int, char **, MPI_Comm);
   ~LAMMPS();
   void create();

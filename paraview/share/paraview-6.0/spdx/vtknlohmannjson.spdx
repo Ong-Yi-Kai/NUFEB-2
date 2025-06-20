@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: nlohmannjson
+DocumentNamespace: https://paraview.org/spdx/nlohmannjson
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:34Z
+
+##### Package: nlohmannjson
+
+PackageName: nlohmannjson
+SPDXID: SPDXRef-Package-nlohmannjson
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/nlohmann_json.git@for/vtk-20240529-3.11.3
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright (c) 2013-2021 Niels Lohmann
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-nlohmannjson

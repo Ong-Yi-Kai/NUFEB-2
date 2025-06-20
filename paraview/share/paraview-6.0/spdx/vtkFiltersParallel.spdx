@@ -1,0 +1,27 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkFiltersParallel
+DocumentNamespace: https://paraview.org/spdx/vtkFiltersParallel
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:36Z
+
+##### Package: vtkFiltersParallel
+
+PackageName: vtkFiltersParallel
+SPDXID: SPDXRef-Package-vtkFiltersParallel
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/Filters/Parallel
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause AND BSD-3-Clause AND BSL-1.0
+PackageLicenseDeclared: BSD-3-Clause
+PackageLicenseInfoFromFiles: BSD-3-Clause
+PackageLicenseInfoFromFiles: BSD-3-Clause AND BSL-1.0
+PackageCopyrightText: <text>
+Copyright (C) 2008 The Trustees of Indiana University.
+Copyright (c) Kitware Inc.
+Copyright (c) Kitware, Inc.
+Copyright (c) Sandia Corporation
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkFiltersParallel

@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: utillinux
+DocumentNamespace: https://paraview.org/spdx/utillinux
+Creator: Tool: CMake
+Created: 2025-05-21T00:52:07Z
+
+##### Package: utillinux
+
+PackageName: utillinux
+SPDXID: SPDXRef-Package-utillinux
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/util-linux-2.39.2.tar.xz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (C) 1996, 1997, 2007 Theodore Ts'o Copyright (C) 2011-2017 Kareil Zak Copyright (C) 2017 Philip Prindeville Copyright 1999 Andreas Dilger Copyright Karel Zak and util-linux authors
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-utillinux

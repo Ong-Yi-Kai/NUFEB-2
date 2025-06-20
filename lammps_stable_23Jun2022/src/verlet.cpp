@@ -1,4 +1,3 @@
-// clang-format off
 /* ----------------------------------------------------------------------
    LAMMPS - Large-scale Atomic/Molecular Massively Parallel Simulator
    https://www.lammps.org/, Sandia National Laboratories
@@ -34,6 +33,11 @@
 #include "update.h"
 
 #include <cstring>
+
+// NUFEB specific
+
+#include "grid.h"
+#include "comm_grid.h"
 
 using namespace LAMMPS_NS;
 
@@ -130,6 +134,11 @@ void Verlet::setup(int flag)
   modify->setup_post_neighbor();
   neighbor->ncalls = 0;
 
+  // NUFEB specific
+
+  grid->setup();
+  comm_grid->setup();
+  
   // compute all forces
 
   force->setup();
@@ -251,6 +260,12 @@ void Verlet::run(int n)
 
     ntimestep = ++update->ntimestep;
     ev_set(ntimestep);
+    // NUFEB specific
+    if (grid->grid_exist) {
+      timer->stamp();
+      comm_grid->forward_comm();
+      timer->stamp(Timer::COMM);
+    }
 
     // initial time integration
 

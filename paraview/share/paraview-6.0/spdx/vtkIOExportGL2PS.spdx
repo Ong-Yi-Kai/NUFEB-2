@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkIOExportGL2PS
+DocumentNamespace: https://paraview.org/spdx/vtkIOExportGL2PS
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:34Z
+
+##### Package: vtkIOExportGL2PS
+
+PackageName: vtkIOExportGL2PS
+SPDXID: SPDXRef-Package-vtkIOExportGL2PS
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/IO/ExportGL2PS
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkIOExportGL2PS

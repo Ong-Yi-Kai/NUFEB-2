@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: mili
+DocumentNamespace: https://paraview.org/spdx/mili
+Creator: Tool: CMake
+Created: 2025-05-21T00:50:40Z
+
+##### Package: mili
+
+PackageName: mili
+SPDXID: SPDXRef-Package-mili
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/mili-15.1.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: LGPL-2.1-or-later
+PackageLicenseDeclared: LGPL-2.1-or-later
+PackageCopyrightText: <text>
+Copyright (c) 2016, Lawrence Livermore National Security, LLC. Produced at the Lawrence Livermore National Laboratory
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-mili

@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: scipy
+DocumentNamespace: https://paraview.org/spdx/scipy
+Creator: Tool: CMake
+Created: 2025-05-21T00:57:11Z
+
+##### Package: scipy
+
+PackageName: scipy
+SPDXID: SPDXRef-Package-scipy
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/scipy-1.15.0.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2001-2002 Enthought, Inc. 2003-2023, SciPy Developers
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-scipy

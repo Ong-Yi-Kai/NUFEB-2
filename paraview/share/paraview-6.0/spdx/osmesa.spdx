@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: osmesa
+DocumentNamespace: https://paraview.org/spdx/osmesa
+Creator: Tool: CMake
+Created: 2025-05-21T00:56:01Z
+
+##### Package: osmesa
+
+PackageName: osmesa
+SPDXID: SPDXRef-Package-osmesa
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/mesa-21.2.1.tar.xz
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright (C) 1999-2007  Brian Paul
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-osmesa

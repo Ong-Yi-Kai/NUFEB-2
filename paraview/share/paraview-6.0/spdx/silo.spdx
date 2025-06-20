@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: silo
+DocumentNamespace: https://paraview.org/spdx/silo
+Creator: Tool: CMake
+Created: 2025-05-21T00:59:09Z
+
+##### Package: silo
+
+PackageName: silo
+SPDXID: SPDXRef-Package-silo
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/silo-4.11.1.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (C) 1994-2016 Lawrence Livermore National Security, LLC
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-silo

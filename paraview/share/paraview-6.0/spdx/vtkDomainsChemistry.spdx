@@ -1,0 +1,24 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkDomainsChemistry
+DocumentNamespace: https://paraview.org/spdx/vtkDomainsChemistry
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:36Z
+
+##### Package: vtkDomainsChemistry
+
+PackageName: vtkDomainsChemistry
+SPDXID: SPDXRef-Package-vtkDomainsChemistry
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/Domains/Chemistry
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause AND MIT AND BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause AND MIT
+PackageLicenseInfoFromFiles: BSD-3-Clause AND MIT
+PackageLicenseInfoFromFiles: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen Copyright (C) 2006-2008,2010 The Blue Obelisk Project (http://www.blueobelisk.org/)
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkDomainsChemistry

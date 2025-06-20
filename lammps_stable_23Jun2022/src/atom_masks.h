@@ -1,4 +1,3 @@
-// clang-format off
 /* -*- c++ -*- ----------------------------------------------------------
    LAMMPS - Large-scale Atomic/Molecular Massively Parallel Simulator
    https://www.lammps.org/, Sandia National Laboratories
@@ -104,5 +103,11 @@
 #define DE_MASK        0x00100000
 #define VEST_MASK      0x00200000
 #define CV_MASK        0x00400000
+
+// NUFEB
+
+#define OUTER_MASS_MASK   0x02000000
+#define OUTER_RADIUS_MASK 0x04000000
+#define BIOMASS_MASK      0x08000000
 
 #endif

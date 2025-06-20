@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pegtl
+DocumentNamespace: https://paraview.org/spdx/pegtl
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:34Z
+
+##### Package: pegtl
+
+PackageName: pegtl
+SPDXID: SPDXRef-Package-pegtl
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/pegtl.git@for/vtk-20201001-2.8.3
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright (c) 2007-2020 Dr. Colin Hirsch and Daniel Frey
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pegtl

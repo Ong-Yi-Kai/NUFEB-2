@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pythonkiwisolver
+DocumentNamespace: https://paraview.org/spdx/pythonkiwisolver
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:17Z
+
+##### Package: pythonkiwisolver
+
+PackageName: pythonkiwisolver
+SPDXID: SPDXRef-Package-pythonkiwisolver
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/kiwisolver-1.4.5.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2013, Nucleic Development Team
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pythonkiwisolver

@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: paraviewwebglance
+DocumentNamespace: https://paraview.org/spdx/paraviewwebglance
+Creator: Tool: CMake
+Created: 2025-05-21T00:48:54Z
+
+##### Package: paraviewwebglance
+
+PackageName: paraviewwebglance
+SPDXID: SPDXRef-Package-paraviewwebglance
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/paraview-glance-4.25.0.tgz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2017, Kitware Inc.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-paraviewwebglance

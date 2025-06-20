@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: jsoncpp
+DocumentNamespace: https://paraview.org/spdx/jsoncpp
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:36Z
+
+##### Package: jsoncpp
+
+PackageName: jsoncpp
+SPDXID: SPDXRef-Package-jsoncpp
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/jsoncpp.git@for/vtk-20241206-1.9.6
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright (c) 2007-2010 Baptiste Lepilleur and The JsonCpp Author
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-jsoncpp

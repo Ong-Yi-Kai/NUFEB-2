@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: catalyst
+DocumentNamespace: https://paraview.org/spdx/catalyst
+Creator: Tool: CMake
+Created: 2025-05-21T00:58:44Z
+
+##### Package: catalyst
+
+PackageName: catalyst
+SPDXID: SPDXRef-Package-catalyst
+PackageDownloadLocation: https://gitlab.kitware.com/paraview/catalyst.git@6039252a7b8b4500710d366b8d2bf232297211a6
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause AND MIT AND JSON
+PackageLicenseDeclared: BSD-3-Clause AND MIT AND JSON
+PackageCopyrightText: <text>
+Copyright (c) 2000-2005 Kitware Inc. Copyright (c) 2014-2018, Lawrence Livermore National Security, LLC. Copyright (c) 2017-2019 Ingy döt Net Copyright (c) 2006-2016 Kirill Simonov Copyright (C) 2015 THL A29 Limited, a Tencent company, and Milo Yip Copyright (c) 2006-2013 Alexander Chemeris Copyright (c) 2002 JSON.org
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-catalyst

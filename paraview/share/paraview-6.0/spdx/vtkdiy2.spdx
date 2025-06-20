@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: diy2
+DocumentNamespace: https://paraview.org/spdx/diy2
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:36Z
+
+##### Package: diy2
+
+PackageName: diy2
+SPDXID: SPDXRef-Package-diy2
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/diy2.git@for/vtk-20250313-e5f2edf6f
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2015, The Regents of the University of California, through Lawrence Berkeley National Laboratory (subject to receipt of any required approvals from the U.S. Dept. of Energy)
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-diy2

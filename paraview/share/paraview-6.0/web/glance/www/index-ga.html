@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="google" value="notranslate">
+    <title>Kitware Glance</title>
+    <meta name="description" content="Data Viewer in a browser">
+    <link inline rel="icon" type="image/png" href="ParaView.png">
+    <style>
+    html {
+      overflow: hidden !important;
+      width: 100%;
+    }
+    body {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      overflow-y: scroll;
+    }
+    </style>
+    
+    <link inline rel="stylesheet" href="vendors.3ffe775dcc12f2b6979d.css">
+    
+    <link inline rel="stylesheet" href="glance.f7f1fce385809ff46cdc.css">
+    
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90338862-10"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-90338862-10');
+    </script>
+    
+    <script inline src="version.js"></script>
+    
+      <script inline src="runtime.74fa8d451a2116bf77ae.js"></script>
+    
+      <script inline src="vendors.10c89adbf1710d24c1bf.js"></script>
+    
+      <script inline src="glance.7d6b33599cc17931c8c9.js"></script>
+    
+      <script src="glance-external-ITKReader.702e8255409968addaa5.js"></script>
+    
+      <script src="glance-external-Workbox.90844adf6eef162f4191.js"></script>
+    
+  </head>
+  <body>
+    <div id="root-container"></div>
+    <script>
+      const container = document.querySelector('#root-container');
+      const glanceInstance = Glance.createViewer(container);
+      glanceInstance.processURLArgs();
+    </script>
+  </body>
+</html>

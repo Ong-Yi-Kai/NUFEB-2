@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: medfile
+DocumentNamespace: https://paraview.org/spdx/medfile
+Creator: Tool: CMake
+Created: 2025-05-21T00:59:17Z
+
+##### Package: medfile
+
+PackageName: medfile
+SPDXID: SPDXRef-Package-medfile
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/med-5.0.0.tar.bz2
+FilesAnalyzed: False
+PackageLicenseConcluded: LGPL-3.0-or-later
+PackageLicenseDeclared: LGPL-3.0-or-later
+PackageCopyrightText: <text>
+Copyright (C) CEA/DEN, EDF R&D, OPEN CASCADE
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-medfile

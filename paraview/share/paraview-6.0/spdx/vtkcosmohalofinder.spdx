@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: cosmohalofinder
+DocumentNamespace: https://paraview.org/spdx/cosmohalofinder
+Creator: Tool: CMake
+Created: 2025-05-21T01:17:27Z
+
+##### Package: cosmohalofinder
+
+PackageName: cosmohalofinder
+SPDXID: SPDXRef-Package-cosmohalofinder
+PackageDownloadLocation: git+https://gitlab.kitware.com/paraview/paraview/-/tree/master/ThirdParty/CosmoHaloFinder/vtkcosmohalofinder
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2007, Los Alamos National Security, LLC
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-cosmohalofinder

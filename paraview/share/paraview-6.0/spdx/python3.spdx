@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: python3
+DocumentNamespace: https://paraview.org/spdx/python3
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:02Z
+
+##### Package: python3
+
+PackageName: python3
+SPDXID: SPDXRef-Package-python3
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/Python-3.12.7.tar.xz
+FilesAnalyzed: False
+PackageLicenseConcluded: Python-2.0
+PackageLicenseDeclared: Python-2.0
+PackageCopyrightText: <text>
+Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 Python Software Foundation
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-python3

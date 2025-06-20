@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pythonpandas
+DocumentNamespace: https://paraview.org/spdx/pythonpandas
+Creator: Tool: CMake
+Created: 2025-05-21T00:59:07Z
+
+##### Package: pythonpandas
+
+PackageName: pythonpandas
+SPDXID: SPDXRef-Package-pythonpandas
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/pandas-2.0.3.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) 2008-2011, AQR Capital Management, LLC, Lambda Foundry, Inc. and PyData Development Team
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pythonpandas

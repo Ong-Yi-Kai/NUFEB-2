@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: ispc
+DocumentNamespace: https://paraview.org/spdx/ispc
+Creator: Tool: CMake
+Created: 2025-05-21T00:48:58Z
+
+##### Package: ispc
+
+PackageName: ispc
+SPDXID: SPDXRef-Package-ispc
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/ispc-v1.16.1-linux.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright Intel Corporation
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-ispc

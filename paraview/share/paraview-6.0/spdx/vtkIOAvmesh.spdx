@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtkIOAvmesh
+DocumentNamespace: https://paraview.org/spdx/vtkIOAvmesh
+Creator: Tool: CMake
+Created: 2025-05-21T01:09:55Z
+
+##### Package: vtkIOAvmesh
+
+PackageName: vtkIOAvmesh
+SPDXID: SPDXRef-Package-vtkIOAvmesh
+PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/VTK/IO/Avmesh
+FilesAnalyzed: True
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkIOAvmesh

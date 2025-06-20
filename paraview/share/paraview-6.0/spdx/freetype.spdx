@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: freetype
+DocumentNamespace: https://paraview.org/spdx/freetype
+Creator: Tool: CMake
+Created: 2025-05-21T00:49:10Z
+
+##### Package: freetype
+
+PackageName: freetype
+SPDXID: SPDXRef-Package-freetype
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/freetype-2.13.1.tar.xz
+FilesAnalyzed: False
+PackageLicenseConcluded: FTL
+PackageLicenseDeclared: FTL
+PackageCopyrightText: <text>
+Copyright 1996-2002, 2006 by David Turner, Robert Wilhelm, and Werner Lemberg
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-freetype

@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: pythonpyparsing
+DocumentNamespace: https://paraview.org/spdx/pythonpyparsing
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:05Z
+
+##### Package: pythonpyparsing
+
+PackageName: pythonpyparsing
+SPDXID: SPDXRef-Package-pythonpyparsing
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/pyparsing-3.0.9.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+Copyright 2003-2022 Paul McGuire
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-pythonpyparsing

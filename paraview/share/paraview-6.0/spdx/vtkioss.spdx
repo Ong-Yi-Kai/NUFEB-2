@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: ioss
+DocumentNamespace: https://paraview.org/spdx/ioss
+Creator: Tool: CMake
+Created: 2025-05-21T01:02:24Z
+
+##### Package: ioss
+
+PackageName: ioss
+SPDXID: SPDXRef-Package-ioss
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/seacas.git@ioss/for/vtk-20250313-v2025-02-27/seacas/libraries/ioss/
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright(C) 1999-2017 National Technology & Engineering Solutions of Sandia, LLC (NTESS)
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-ioss

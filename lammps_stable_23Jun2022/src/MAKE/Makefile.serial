@@ -7,18 +7,18 @@ SHELL = /bin/sh
 # specify flags and libraries needed for your compiler
 
 CC =		g++
-CCFLAGS =	-g -O3 -std=c++11
+CCFLAGS =	-g -O3 -std=c++1y 
 SHFLAGS =	-fPIC
 DEPFLAGS =	-M
 
 LINK =		g++
-LINKFLAGS =	-g -O -std=c++11
-LIB =
+LINKFLAGS =	-g -O
+LIB = 
 SIZE =		size
 
 ARCHIVE =	ar
 ARFLAGS =	-rc
-SHLIBFLAGS =	-shared -rdynamic
+SHLIBFLAGS =	-shared
 
 # ---------------------------------------------------------------------
 # LAMMPS-specific settings, all OPTIONAL
@@ -28,7 +28,7 @@ SHLIBFLAGS =	-shared -rdynamic
 # LAMMPS ifdef settings
 # see possible settings in Section 3.5 of the manual
 
-LMP_INC =	-DLAMMPS_GZIP -DLAMMPS_MEMALIGN=64  # -DLAMMPS_CXX98
+LMP_INC =	-DLAMMPS_GZIP -DLAMMPS_MEMALIGN=64 -DLAMMPS_PNG -DLAMMPS_FFMPEG  
 
 # MPI library
 # see discussion in Section 3.4 of the manual
@@ -50,8 +50,8 @@ MPI_LIB =	-lmpi_stubs
 # PATH = path for FFT library
 # LIB = name of FFT library
 
-FFT_INC =    	
-FFT_PATH = 
+FFT_INC =   -I/usr/local/include 	
+FFT_PATH = -L/usr/lib 
 FFT_LIB =	
 
 # JPEG and/or PNG library
@@ -61,14 +61,9 @@ FFT_LIB =
 # PATH = path(s) for JPEG library and/or PNG library
 # LIB = name(s) of JPEG library and/or PNG library
 
-JPG_INC =       
-JPG_PATH = 	
-JPG_LIB =	
-
-# library for loading shared objects (defaults to -ldl, should be empty on Windows)
-# uncomment to change the default
-
-# override DYN_LIB =
+JPG_INC =  -I/usr/include
+JPG_PATH = -L/usr/lib
+JPG_LIB = -lpng
 
 # ---------------------------------------------------------------------
 # build rules and dependencies
@@ -79,7 +74,7 @@ include Makefile.package
 
 EXTRA_INC = $(LMP_INC) $(PKG_INC) $(MPI_INC) $(FFT_INC) $(JPG_INC) $(PKG_SYSINC)
 EXTRA_PATH = $(PKG_PATH) $(MPI_PATH) $(FFT_PATH) $(JPG_PATH) $(PKG_SYSPATH)
-EXTRA_LIB = $(PKG_LIB) $(MPI_LIB) $(FFT_LIB) $(JPG_LIB) $(PKG_SYSLIB) $(DYN_LIB)
+EXTRA_LIB = $(PKG_LIB) $(MPI_LIB) $(FFT_LIB) $(JPG_LIB) $(PKG_SYSLIB)
 EXTRA_CPP_DEPENDS = $(PKG_CPP_DEPENDS)
 EXTRA_LINK_DEPENDS = $(PKG_LINK_DEPENDS)
 

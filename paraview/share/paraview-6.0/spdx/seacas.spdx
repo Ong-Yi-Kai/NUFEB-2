@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: seacas
+DocumentNamespace: https://paraview.org/spdx/seacas
+Creator: Tool: CMake
+Created: 2025-05-21T00:59:36Z
+
+##### Package: seacas
+
+PackageName: seacas
+SPDXID: SPDXRef-Package-seacas
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/seacas-2023-05-30.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright (c) National Technology & Engineering Solutions of Sandia, LLC (NTESS)
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-seacas

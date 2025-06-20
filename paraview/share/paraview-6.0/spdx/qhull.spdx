@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: qhull
+DocumentNamespace: https://paraview.org/spdx/qhull
+Creator: Tool: CMake
+Created: 2025-05-21T00:48:54Z
+
+##### Package: qhull
+
+PackageName: qhull
+SPDXID: SPDXRef-Package-qhull
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/qhull-2020-src-8.0.2.tgz
+FilesAnalyzed: False
+PackageLicenseConcluded: Qhull
+PackageLicenseDeclared: Qhull
+PackageCopyrightText: <text>
+Copyright (c) 1993-2020 C.B. Barber Arlington, MA and The National Science and Technology Research Center for Computation and Visualization of Geometric Structures (The Geometry Center) University of Minnesota
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-qhull

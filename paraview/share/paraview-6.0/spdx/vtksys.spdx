@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: vtksys
+DocumentNamespace: https://paraview.org/spdx/vtksys
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:34Z
+
+##### Package: vtksys
+
+PackageName: vtksys
+SPDXID: SPDXRef-Package-vtksys
+PackageDownloadLocation: git+https://gitlab.kitware.com/utils/kwsys.git
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright 2000-2016 Kitware, Inc. and Contributors
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtksys

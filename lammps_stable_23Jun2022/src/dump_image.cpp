@@ -1,4 +1,3 @@
-// clang-format off
 /* ----------------------------------------------------------------------
    LAMMPS - Large-scale Atomic/Molecular Massively Parallel Simulator
    https://www.lammps.org/, Sandia National Laboratories
@@ -17,6 +16,7 @@
 #include "atom.h"
 #include "atom_vec.h"
 #include "atom_vec_body.h"
+#include "atom_vec_bacillus.h" // NUFEB specific
 #include "atom_vec_line.h"
 #include "atom_vec_tri.h"
 #include "body.h"
@@ -39,6 +39,12 @@
 #include <cctype>
 #include <cstring>
 
+// NUFEB
+#ifdef LMP_USER_PLASMID
+#include "fix_property_plasmid.h"
+#endif
+
+
 using namespace LAMMPS_NS;
 using MathConst::DEG2RAD;
 
@@ -57,7 +63,7 @@ DumpImage::DumpImage(LAMMPS *lmp, int narg, char **arg) :
   zoomstr(nullptr), diamtype(nullptr), diamelement(nullptr),
   bdiamtype(nullptr), colortype(nullptr), colorelement(nullptr), bcolortype(nullptr),
   avec_line(nullptr), avec_tri(nullptr), avec_body(nullptr), fixptr(nullptr), image(nullptr),
-  chooseghost(nullptr), bufcopy(nullptr)
+  chooseghost(nullptr), bufcopy(nullptr), avec_bacillus(nullptr)   // NUFEB specific
 {
   if (binary || multiproc) error->all(FLERR,"Invalid dump image filename");
 
@@ -118,7 +124,9 @@ DumpImage::DumpImage(LAMMPS *lmp, int narg, char **arg) :
   // set defaults for optional args
 
   atomflag = YES;
-  lineflag = triflag = bodyflag = fixflag = NO;
+  // NUFEB
+  lineflag = triflag = bodyflag = bacillusflag = fixflag = NO;
+  plasmidflag = NO;
   if (atom->nbondtypes == 0) bondflag = NO;
   else {
     bondflag = YES;
@@ -146,7 +154,9 @@ DumpImage::DumpImage(LAMMPS *lmp, int narg, char **arg) :
   while (iarg < narg) {
     if (strcmp(arg[iarg],"atom") == 0) {
       if (iarg+2 > narg) error->all(FLERR,"Illegal dump image command");
-      atomflag = utils::logical(FLERR,arg[iarg+1],false,lmp);
+      if (strcmp(arg[iarg+1],"yes") == 0) atomflag = YES;
+      else if (strcmp(arg[iarg+1],"no") == 0) atomflag = NO;
+      else error->all(FLERR,"Illegal dump image command");
       iarg += 2;
 
     } else if (strcmp(arg[iarg],"adiam") == 0) {
@@ -203,6 +213,17 @@ DumpImage::DumpImage(LAMMPS *lmp, int narg, char **arg) :
       bodyflag2 = utils::numeric(FLERR,arg[iarg+3],false,lmp);
       iarg += 4;
 
+    } else if (strcmp(arg[iarg],"bacillus") == 0) {
+      if (iarg+2 > narg) error->all(FLERR,"Illegal dump image command");
+      bacillusflag = YES;
+      if (strcmp(arg[iarg+1],"type") == 0) bacilluscolor = TYPE;
+      else error->all(FLERR,"Illegal dump image command");
+      if (strcmp(arg[iarg+2],"plasmid") == 0) {
+        if (strcmp(arg[iarg+3], "yes") == 0) plasmidflag = 1;
+        else if (strcmp(arg[iarg+3], "no") == 0) plasmidflag = 0;
+        else error->all(FLERR,"Illegal dump image command");
+      } else error->all(FLERR,"Illegal dump image command");
+      iarg += 4;
     } else if (strcmp(arg[iarg],"fix") == 0) {
       if (iarg+5 > narg) error->all(FLERR,"Illegal dump image command");
       fixflag = YES;
@@ -346,9 +367,14 @@ DumpImage::DumpImage(LAMMPS *lmp, int narg, char **arg) :
     if (!avec_body)
       error->all(FLERR,"Dump image body yes requires atom style body");
   }
+  if (bacillusflag) {
+    avec_bacillus = dynamic_cast<AtomVecBacillus *>(atom->style_match("bacillus"));
+    if (!avec_bacillus)
+      error->all(FLERR,"Dump image body yes requires atom style bacillus");
+  }
 
   extraflag = 0;
-  if (lineflag || triflag || bodyflag) extraflag = 1;
+  if (lineflag || triflag || bodyflag || bacillusflag) extraflag = 1;
 
   if (fixflag) {
     fixptr = modify->get_fix_by_id(fixID);
@@ -684,6 +710,9 @@ void DumpImage::create_image()
   tagint tagprev;
   double diameter,delx,dely,delz;
   int *bodyvec,*fixvec;
+  // NUFEB specific
+  int bacillusvec;
+  double *bacillusarray;
   double **bodyarray,**fixarray;
   double *color,*color1,*color2;
   double *p1,*p2,*p3;
@@ -697,6 +726,7 @@ void DumpImage::create_image()
     int *line = atom->line;
     int *tri = atom->tri;
     int *body = atom->body;
+    int *bacillus = atom->bacillus;
 
     m = 0;
     for (i = 0; i < nchoose; i++) {
@@ -731,6 +761,7 @@ void DumpImage::create_image()
         if (lineflag && line[j] >= 0) drawflag = 0;
         if (triflag && tri[j] >= 0) drawflag = 0;
         if (bodyflag && body[j] >= 0) drawflag = 0;
+        if (bacillusflag && bacillus[j] >= 0) drawflag = 0;
       }
 
       if (drawflag) image->draw_sphere(x[j],color,diameter);
@@ -772,6 +803,66 @@ void DumpImage::create_image()
       pt2[2] = 0.0;
 
       image->draw_cylinder(pt1,pt2,color,ldiamvalue,3);
+    }
+  }
+
+  // render atoms that are bacilli
+
+  if (bacillusflag) {
+    double *pole1, *pole2;
+    double xp1[3], xp2[3];
+    int ilocal;
+    double diameter;
+    double **x = atom->x;
+    int *type = atom->type;
+    int *bacillus = atom->bacillus;
+    AtomVecBacillus::Bonus *bonus;
+
+    for (i = 0; i < nchoose; i++) {
+      j = clist[i];
+      bonus = &avec_bacillus->bonus[bacillus[i]];
+      if (bacillus[j] < 0) continue;
+
+      if (bacilluscolor == TYPE) {
+        color = colortype[type[j]];
+      }
+
+      xp1[0] = xp1[1] = xp1[2] = 0.0;
+      xp2[0] = xp2[1] = xp2[2] = 0.0;
+
+      avec_bacillus->get_pole_coords(i, xp1, xp2);
+      diameter = bonus->diameter;
+
+      if (!plasmidflag){
+        if (bonus->length == 0) { // spheres
+          image->draw_sphere(x[i],color,diameter);
+        } else { // rods
+          image->draw_cylinder(xp1,xp2,color,diameter,3);
+        }
+      } else{
+	auto fixlist = modify->get_fix_by_style("^nufeb/property/plasmid");
+    if (fixlist.size() != 1)
+      error->all(FLERR, "There must be exactly one fix nufeb/property/plasmid defined for fix pour");
+#ifdef LMP_USER_PLASMID
+    auto fix = dynamic_cast<FixPropertyPlasmid *>(fixlist.front());
+
+	double plm_x[3];
+	plm_x[0] = plm_x[1] = plm_x[2] = 0.0;
+	for (int k = 0; k < (int)fix->vprop[i]; k++) {
+	  fix->get_plasmid_coords(i,k,plm_x);
+	  image->draw_sphere(plm_x,image->color2rgb("green"),fix->plm_dia);
+	}
+	double xfilament1[3];
+	double xfilament2[3];
+	for (int k = 0; k < fix->nfilas[i]; k++) {
+	  int p1 = fix->fila[i][k][0];
+	  int p2 = fix->fila[i][k][1];
+	  fix->get_plasmid_coords(i,p1,xfilament1);
+	  fix->get_plasmid_coords(i,p2,xfilament2);
+	  image->draw_cylinder(xfilament1,xfilament2,image->color2rgb("red"),5e-8,0);
+	}
+#endif
+      }
     }
   }
 

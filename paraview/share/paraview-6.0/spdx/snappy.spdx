@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: snappy
+DocumentNamespace: https://paraview.org/spdx/snappy
+Creator: Tool: CMake
+Created: 2025-05-21T00:49:14Z
+
+##### Package: snappy
+
+PackageName: snappy
+SPDXID: SPDXRef-Package-snappy
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/snappy-1.1.10.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: <text>
+Copyright 2011, Google Inc.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-snappy

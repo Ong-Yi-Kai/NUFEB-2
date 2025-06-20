@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: openvkl
+DocumentNamespace: https://paraview.org/spdx/openvkl
+Creator: Tool: CMake
+Created: 2025-05-21T00:53:12Z
+
+##### Package: openvkl
+
+PackageName: openvkl
+SPDXID: SPDXRef-Package-openvkl
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/openvkl-v1.0.1.tar.gz
+FilesAnalyzed: False
+PackageLicenseConcluded: Apache-2.0
+PackageLicenseDeclared: Apache-2.0
+PackageCopyrightText: <text>
+Copyright (c) Intel Corporation
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-openvkl

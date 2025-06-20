@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: paraviewtranslations
+DocumentNamespace: https://paraview.org/spdx/paraviewtranslations
+Creator: Tool: CMake
+Created: 2025-05-21T00:50:40Z
+
+##### Package: paraviewtranslations
+
+PackageName: paraviewtranslations
+SPDXID: SPDXRef-Package-paraviewtranslations
+PackageDownloadLocation: https://gitlab.kitware.com/paraview/paraview-translations.git@origin/main
+FilesAnalyzed: False
+PackageLicenseConcluded: Apache-2.0
+PackageLicenseDeclared: Apache-2.0
+PackageCopyrightText: <text>
+Copyright Kitware SAS
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-paraviewtranslations

@@ -1,4 +1,3 @@
-// clang-format off
 /* ----------------------------------------------------------------------
    LAMMPS - Large-scale Atomic/Molecular Massively Parallel Simulator
    https://www.lammps.org/, Sandia National Laboratories
@@ -37,6 +36,8 @@
 
 #include <algorithm>
 #include <cstring>
+
+#include <iostream>
 
 #ifdef LMP_GPU
 #include "fix_gpu.h"
@@ -93,6 +94,8 @@ Atom::Atom(LAMMPS *lmp) : Pointers(lmp)
   nlocal = nghost = nmax = 0;
   ntypes = 0;
   nellipsoids = nlines = ntris = nbodies = 0;
+  // NUFEB specific
+  nbacilli = 0;
   nbondtypes = nangletypes = ndihedraltypes = nimpropertypes = 0;
   nbonds = nangles = ndihedrals = nimpropers = 0;
 
@@ -123,6 +126,11 @@ Atom::Atom(LAMMPS *lmp) : Pointers(lmp)
   radius = rmass = nullptr;
   ellipsoid = line = tri = body = nullptr;
   quat = nullptr;
+
+  // NUFEB
+  outer_radius = outer_mass = nullptr;
+  biomass = nullptr;
+  bacillus = nullptr;
 
   // molecular systems
 
@@ -487,6 +495,12 @@ void Atom::peratom_create()
   add_peratom("ervelforce",&ervelforce,DOUBLE,0);
   add_peratom("etag",&etag,INT,0);
 
+  // USER-NUFEB
+  add_peratom("biomass",&biomass,DOUBLE,0);
+  add_peratom("outer_mass",&outer_mass,DOUBLE,0);
+  add_peratom("outer_radius",&outer_radius,DOUBLE,0);
+  add_peratom("bacillus",&bacillus,INT,0);
+
   // CG-DNA package
 
   add_peratom("id5p",&id5p,tagintsize,0);
@@ -622,6 +636,10 @@ void Atom::set_atomflag_defaults()
   mesont_flag = 0;
   contact_radius_flag = smd_data_9_flag = smd_stress_flag = 0;
   eff_plastic_strain_flag = eff_plastic_strain_rate_flag = 0;
+  // NUFEB package
+  bacillus_flag = coccus_flag = 0;
+  outer_radius_flag = outer_mass_flag = 0;
+  biomass_flag = 0;
 
   pdscale = 1.0;
 }
@@ -655,6 +673,7 @@ void Atom::create_avec(const std::string &style, int narg, char **arg, int trysu
 
   if (sflag) {
     std::string estyle = style + "/";
+    std::cout << "Using atom style: " << estyle << std::endl;
     if (sflag == 1) estyle += lmp->suffix;
     else estyle += lmp->suffix2;
     atom_style = utils::strdup(estyle);
@@ -941,7 +960,8 @@ int Atom::tag_consecutive()
 
 void Atom::bonus_check()
 {
-  bigint local_ellipsoids = 0, local_lines = 0, local_tris = 0;
+  // NUFEB specific
+  bigint local_ellipsoids = 0, local_lines = 0, local_tris = 0, local_bacilli = 0;
   bigint local_bodies = 0, num_global;
 
   for (int i = 0; i < nlocal; ++i) {
@@ -970,6 +990,12 @@ void Atom::bonus_check()
   if (nbodies != num_global)
     error->all(FLERR,"Inconsistent 'bodies' header value and number of "
                "atoms with enabled body flags");
+
+  // NUFEB specific
+  MPI_Allreduce(&local_bacilli,&num_global,1,MPI_LMP_BIGINT,MPI_SUM,world);
+  if (nbacilli != num_global)
+    error->all(FLERR,"Inconsistent 'bacilli' header value and number of "
+               "atoms with enabled bacillus flags");
 }
 
 /* ----------------------------------------------------------------------
@@ -2729,6 +2755,12 @@ void *Atom::extract(const char *name)
   if (strcmp(name,"curvature") == 0) return (void *) curvature;
   if (strcmp(name,"q_unscaled") == 0) return (void *) q_unscaled;
 
+  // NUFEB package
+  if (strcmp(name,"biomass") == 0) return (void *) biomass;
+  if (strcmp(name,"outer_mass") == 0) return (void *) outer_mass;
+  if (strcmp(name,"outer_radius") == 0) return (void *) outer_radius;
+  if (strcmp(name,"bacillus") == 0) return (void *) bacillus;
+
   // end of customization section
   // --------------------------------------------------------------------
 
@@ -2849,6 +2881,12 @@ int Atom::extract_datatype(const char *name)
   if (strcmp(name,"epsilon") == 0) return LAMMPS_DOUBLE;
   if (strcmp(name,"curvature") == 0) return LAMMPS_DOUBLE;
   if (strcmp(name,"q_unscaled") == 0) return LAMMPS_DOUBLE;
+
+  // NUFEB package
+  if (strcmp(name,"bacillus") == 0) return LAMMPS_INT;
+  if (strcmp(name,"biomass") == 0) return LAMMPS_DOUBLE;
+  if (strcmp(name,"outer_mass") == 0) return LAMMPS_DOUBLE;
+  if (strcmp(name,"outer_radius") == 0) return LAMMPS_DOUBLE;
 
   // end of customization section
   // --------------------------------------------------------------------

@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: exprtk
+DocumentNamespace: https://paraview.org/spdx/exprtk
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:34Z
+
+##### Package: exprtk
+
+PackageName: exprtk
+SPDXID: SPDXRef-Package-exprtk
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/exprtk.git@for/vtk-20250313-0.0.3-cmake
+FilesAnalyzed: False
+PackageLicenseConcluded: MIT
+PackageLicenseDeclared: MIT
+PackageCopyrightText: <text>
+1999-2024 Arash Partow
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-exprtk

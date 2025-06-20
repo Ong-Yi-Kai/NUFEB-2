@@ -1,0 +1,33 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: loguru
+DocumentNamespace: https://paraview.org/spdx/loguru
+Creator: Tool: CMake
+Created: 2025-05-21T01:01:34Z
+
+##### Package: loguru
+
+PackageName: loguru
+SPDXID: SPDXRef-Package-loguru
+PackageDownloadLocation: git+https://gitlab.kitware.com/third-party/loguru.git@for/vtk-20230822-2.1.0
+FilesAnalyzed: False
+PackageLicenseConcluded: LicenseRef-PublicDomain-loguru
+PackageLicenseDeclared: LicenseRef-PublicDomain-loguru
+PackageCopyrightText: <text>
+NONE
+</text>
+
+LicenseID: LicenseRef-PublicDomain-loguru
+ExtractedText: <text>License
+========
+
+This software is in the public domain. Where that dedication is not recognized,
+you are granted a perpetual, irrevocable license to copy, modify and distribute
+it as you see fit.
+
+That being said, I would appreciate credit! If you find Loguru useful, tweet me
+at @ernerfeldt mail me at emil.ernerfeldt@gmail.com.
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-loguru

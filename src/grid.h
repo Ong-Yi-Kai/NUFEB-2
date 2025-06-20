@@ -70,6 +70,10 @@ namespace LAMMPS_NS {
     double **act;     // activity of substrate form for microbial uptaking
     int **boundary;   // boundary conditions (-x, +x, -y, +y, -z, +z)
 
+    // nufeb/gsmm
+    int gsmm_flag;
+    
+
   private:
     template<typename T>
     static GridVec *gvec_creator(LAMMPS *);

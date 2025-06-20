@@ -1,0 +1,21 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: boost
+DocumentNamespace: https://paraview.org/spdx/boost
+Creator: Tool: CMake
+Created: 2025-05-21T00:51:28Z
+
+##### Package: boost
+
+PackageName: boost
+SPDXID: SPDXRef-Package-boost
+PackageDownloadLocation: https://www.paraview.org/files/dependencies/boost_1_83_0.tar.bz2
+FilesAnalyzed: False
+PackageLicenseConcluded: BSL-1.0
+PackageLicenseDeclared: BSL-1.0
+PackageCopyrightText: <text>
+Copyright Beman Dawes, David Abrahams, 1998-2005 Copyright Rene Rivera 2004-2007
+</text>
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-boost

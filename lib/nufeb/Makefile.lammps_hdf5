@@ -1,5 +1,9 @@
 # Settings that the LAMMPS build will import when this package library is used
-#
-nufeb_SYSINC = -DENABLE_DUMP_BIO_HDF5 -I../../../thirdparty/hdf5-1.10.5/hdf5/include
-nufeb_SYSLIB = -lhdf5 -L../../../thirdparty/hdf5-1.10.5/hdf5/lib
+
+SBML_INC = -I../../../thirdparty/libsbml-5.20.5/build/libsbml/include
+SBML_PATH = -L../../../thirdparty/libsbml-5.20.5/build/libsbml/lib
+SBML_LIB = -lsbml
+
+nufeb_SYSINC = -DENABLE_DUMP_BIO_HDF5 -I../../../thirdparty/hdf5-1.10.5/hdf5/include ${SBML_INC}
+nufeb_SYSLIB = -lhdf5 -L../../../thirdparty/hdf5-1.10.5/hdf5/lib ${SBML_PATH} ${SBML_LIB}
 nufeb_SYSPATH = 

@@ -29,12 +29,21 @@ mkdir vtk-8.0
 intallpath=$PWD/vtk-8.0
 echo $intallpath
 
+echo "================= Running cmake for VTK ================="
 cmake \
  -DBUILD_TESTING=OFF \
  -DCMAKE_INSTALL_PREFIX:PATH=$intallpath ../
 
-make -j4
-make install
+make -j4 || {
+  cmake \
+ -DBUILD_TESTING=OFF \
+ -DCMAKE_INSTALL_PREFIX:PATH=$intallpath ../
+
+  make -j4 || { echo "Make failed!"; exit 1; }
+}
+
+echo "================= running make install ================="
+make install || { echo "Install failed!"; exit 1; }
 
 version=`uname`
 # set LD path according to different versions
@@ -44,10 +53,8 @@ if grep -q $intallpath ~/.bashrc; then
 else
   echo "Writing path to .bashrc"
   if [ $version == "Linux" ]; then
-    echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:$intallpath/lib" >> ~/.bashrc
+    echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:$intallpath/lib:" >> ~/.bashrc
   elif [ $version == "Darwin" ]; then
     echo "export DYLD_LIBRARY_PATH=\$DYLD_LIBRARY_PATH:$intallpath/lib" >> ~/.bashrc
   fi
 fi
-
-exit 1
